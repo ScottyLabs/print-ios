@@ -1,0 +1,6 @@
+framework module Pods_ScottyLabs_Print_App {
+  umbrella header "Pods-ScottyLabs Print App-umbrella.h"
+
+  export *
+  module * { export * }
+}
