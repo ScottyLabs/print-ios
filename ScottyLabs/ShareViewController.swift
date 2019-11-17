@@ -77,7 +77,7 @@ class ShareViewController: SLComposeServiceViewController {
         
         if let content = extensionContext!.inputItems.first as? NSExtensionItem {
             print("first if let!")
-            if let contents = content.attachments as? [NSItemProvider] {
+            if let contents = content.attachments {
                 print("second if let!")
                 for attachment in contents {
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
