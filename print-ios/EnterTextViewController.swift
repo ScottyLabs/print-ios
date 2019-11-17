@@ -66,7 +66,11 @@ class EnterTextViewController: UIViewController, UITextViewDelegate {
       textPath = path
     }
         
-    let parameters = ["andrew_id" : persistData.andrewID]
+    let parameters = [
+      "andrew_id" : persistData.andrewID,
+      "copies": "1",
+      "sides": "one-sided"
+    ]
         
     Alamofire.upload(multipartFormData: { multipartFormData in
             
@@ -87,7 +91,7 @@ class EnterTextViewController: UIViewController, UITextViewDelegate {
         multipartFormData.append(data, withName: "file", fileName: "ScottyLabs.txt", mimeType: "text/plain")
       }
 
-    }, to: "http://apis.scottylabs.org/supersecrethash0123456789/howdidyouguessthis/goodjob/print/printfile", encodingCompletion: { result in
+    }, to: "http://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
             
       switch result {
       case .success(let upload, _, _):

@@ -31,7 +31,12 @@ class TutorialViewController: UIViewController {
     let bundle = Bundle.main
     let samplePath = bundle.path(forResource: "sample", ofType: "pdf")
         
-    let parameters = ["andrew_id" : persistData.andrewID]
+    let parameters = [
+      "andrew_id" : persistData.andrewID,
+      "copies": "1",
+      "sides": "one-sided"
+    ]
+    
     Alamofire.upload(multipartFormData: { multipartFormData in
             
       // I don't think the order matters for appending
@@ -50,7 +55,7 @@ class TutorialViewController: UIViewController {
         multipartFormData.append(data, withName: "file", fileName: "sample.pdf", mimeType: "application/pdf")
       }
             
-    }, to: "http://apis.scottylabs.org/supersecrethash0123456789/howdidyouguessthis/goodjob/print/printfile", encodingCompletion: { result in
+    }, to: "http://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
       switch result {
       case .success(let upload, _, _):
                 

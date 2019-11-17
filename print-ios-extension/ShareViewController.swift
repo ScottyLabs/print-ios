@@ -48,7 +48,11 @@ class ShareViewController: SLComposeServiceViewController {
   }
     
   func alamofireUpload(andrewID: String, fileURL: URL) {
-    let parameters = ["andrew_id" : persistData.andrewID]
+    let parameters = [
+      "andrew_id" : persistData.andrewID,
+      "copies": "1",
+      "sides": "one-sided"
+    ]
         
     Alamofire.upload(multipartFormData: { multipartFormData in
             
@@ -68,7 +72,7 @@ class ShareViewController: SLComposeServiceViewController {
         multipartFormData.append(data, withName: "file", fileName: self.contentText + ".pdf", mimeType: "application/pdf")
       }
             
-    }, to: "http://apis.scottylabs.org/supersecrethash0123456789/howdidyouguessthis/goodjob/print/printfile", encodingCompletion: { result in
+    }, to: "http://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
             
       switch result {
       case .success(let upload, _, _):
