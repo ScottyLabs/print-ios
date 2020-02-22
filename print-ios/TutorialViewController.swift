@@ -37,6 +37,8 @@ class TutorialViewController: UIViewController {
       "sides": "one-sided"
     ]
     
+    print(samplePath as Any) //test
+
     Alamofire.upload(multipartFormData: { multipartFormData in
             
       // I don't think the order matters for appending
