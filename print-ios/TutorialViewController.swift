@@ -15,10 +15,33 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
        self.view.endEditing(true)
     }
 
+  @IBAction func saveButtonClick(_ sender: Any) {
+    let defaults = UserDefaults.standard
+
+    defaults.set(displayAndrewID.text, forKey: "andrewID")
+    defaults.synchronize()
+    print("ID=\(String(describing: displayAndrewID.text))")
+  }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+  @IBAction func clearButtonClick(_ sender: Any) {
+    if(displayAndrewID.text == ""){
+      loadDefaults()
+      clearButton.setTitle("Clear", for: UIControl.State.normal)
+    }
+    else {
+      displayAndrewID.text = ""
+      clearButton.setTitle("Load", for: UIControl.State.normal)
+    }
+  }
+  
+  func loadDefaults() {
+    let defaults = UserDefaults.standard
+    displayAndrewID.text = (defaults.object(forKey: "andrewID") as! String)
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == andrewIDTextField {
            textField.resignFirstResponder()
         }
@@ -30,8 +53,9 @@ class TutorialViewController: UIViewController, UITextFieldDelegate {
     return true
   }
     
-    @IBOutlet weak var displayAndrewID: UILabel!
-    @IBAction func submitIDbuttonClick(_ sender: Any) {
+  @IBOutlet weak var clearButton: UIButton!
+  @IBOutlet weak var displayAndrewID: UILabel!
+  @IBAction func submitIDbuttonClick(_ sender: Any) {
         viewTapped()
         let name: String = andrewIDTextField.text!
         displayAndrewID.text = " \(name)  "

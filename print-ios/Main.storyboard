@@ -19,8 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="TQd-zN-nUj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="TQd-zN-nUj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.096654570960000005" green="0.12029160229999999" blue="0.15881558940000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgz-AC-6LC">
@@ -30,28 +31,35 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Andrew ID" minimumFontSize="17" id="fj0-oL-fMC">
+                            <textField opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Andrew ID" minimumFontSize="17" id="fj0-oL-fMC">
                                 <rect key="frame" x="44" y="407" width="131" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
-                            <button opaque="NO" contentMode="center" misplaced="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kr-Zt-qn6">
-                                <rect key="frame" x="219" y="404" width="125" height="37"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kr-Zt-qn6">
+                                <rect key="frame" x="219" y="410" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="SET ANDREW ID">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveButtonClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="jqj-xy-mLv"/>
                                     <action selector="submitIDbuttonClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="jCz-S2-8P0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taq-dN-vm2">
+                                <rect key="frame" x="263" y="465" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="gAB-Pe-UP5"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kvo-4J-eHd">
-                                <rect key="frame" x="159" y="485" width="45" height="33"/>
+                                <rect key="frame" x="133" y="484" width="108" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,25 +67,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="56i-Pq-K5D" firstAttribute="top" secondItem="TQd-zN-nUj" secondAttribute="bottom" id="02D-ee-gZW"/>
-                            <constraint firstItem="0kr-Zt-qn6" firstAttribute="top" secondItem="TQd-zN-nUj" secondAttribute="bottom" constant="-263" id="7gp-Hv-0QA"/>
-                            <constraint firstItem="TQd-zN-nUj" firstAttribute="leading" secondItem="Kvo-4J-eHd" secondAttribute="trailing" constant="-204" id="9iY-z3-nqv"/>
-                            <constraint firstItem="TQd-zN-nUj" firstAttribute="top" secondItem="SEY-h8-v5H" secondAttribute="top" id="DQ8-O8-WRA"/>
-                            <constraint firstItem="Kvo-4J-eHd" firstAttribute="top" secondItem="TQd-zN-nUj" secondAttribute="bottom" constant="-182" id="EpC-Gj-Ox4"/>
-                            <constraint firstItem="TQd-zN-nUj" firstAttribute="leading" secondItem="fj0-oL-fMC" secondAttribute="trailing" constant="-175" id="Pn6-bZ-zOY"/>
-                            <constraint firstItem="TQd-zN-nUj" firstAttribute="leading" secondItem="SEY-h8-v5H" secondAttribute="leading" id="XVp-j2-IjS"/>
-                            <constraint firstItem="TQd-zN-nUj" firstAttribute="centerX" secondItem="SEY-h8-v5H" secondAttribute="centerX" id="Z2g-bH-nWT"/>
-                            <constraint firstItem="0kr-Zt-qn6" firstAttribute="leading" secondItem="fj0-oL-fMC" secondAttribute="trailing" constant="44" id="e7W-9S-riJ"/>
-                            <constraint firstItem="Kvo-4J-eHd" firstAttribute="top" secondItem="TQd-zN-nUj" secondAttribute="bottom" constant="-182" id="e9W-BY-Py7"/>
-                            <constraint firstItem="TQd-zN-nUj" firstAttribute="centerY" secondItem="SEY-h8-v5H" secondAttribute="centerY" id="iwG-Km-5hP"/>
-                            <constraint firstItem="fj0-oL-fMC" firstAttribute="top" secondItem="TQd-zN-nUj" secondAttribute="bottom" constant="-260" id="jCM-rg-86X"/>
-                            <constraint firstItem="Kvo-4J-eHd" firstAttribute="top" secondItem="0kr-Zt-qn6" secondAttribute="bottom" constant="44" id="pG3-Ax-1ZH"/>
-                            <constraint firstAttribute="trailing" secondItem="TQd-zN-nUj" secondAttribute="trailing" id="tuB-qc-beo"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="andrewIDTextField" destination="fj0-oL-fMC" id="KKs-77-Bhb"/>
+                        <outlet property="clearButton" destination="taq-dN-vm2" id="mbH-N4-EPT"/>
                         <outlet property="displayAndrewID" destination="Kvo-4J-eHd" id="geB-UM-XDU"/>
                     </connections>
                 </viewController>
