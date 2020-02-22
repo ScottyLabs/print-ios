@@ -2,26 +2,51 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class TutorialViewController: UIViewController {
+class TutorialViewController: UIViewController, UITextFieldDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    andrewIDTextField.delegate = self
+    let tapRecogniser = UITapGestureRecognizer()
+    tapRecogniser.addTarget(self, action: #selector(self.viewTapped))
+    self.view.addGestureRecognizer(tapRecogniser)
   }
+    @objc func viewTapped(){
+       self.view.endEditing(true)
+    }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == andrewIDTextField {
+           textField.resignFirstResponder()
+        }
+        return true
+    }
     
-  override var prefersStatusBarHidden: Bool {
+    @IBOutlet weak var andrewIDTextField: UITextField!
+    override var prefersStatusBarHidden: Bool {
     return true
   }
     
-  @IBAction func shareButton(sender: UIBarButtonItem) {
-    let bundle = Bundle.main
-    let samplePath = bundle.url(forResource: "sample", withExtension: "pdf")
-    displayShareSheet(shareContent: samplePath as Any)
+    @IBOutlet weak var displayAndrewID: UILabel!
+    @IBAction func submitIDbuttonClick(_ sender: Any) {
+        viewTapped()
+        let name: String = andrewIDTextField.text!
+        displayAndrewID.text = " \(name)  "
+        persistData.andrewID = name
+    }
+   // @IBAction func shareButton(sender: UIBarButtonItem) {
+    //let bundle = Bundle.main
+   // let samplePath = bundle.url(forResource: "sample", withExtension: "pdf")
+    //displayShareSheet(shareContent: samplePath as Any)
+  
+  @IBOutlet weak var copiesNum: UILabel!
+  
+  @IBAction func copyStepper(_ sender: UIStepper) {
+    (copiesNum.text = String(sender.value))
   }
-    
   @IBAction func printSampleButton(sender: UIButton) {
     showAndrewIDAlert()
   }
@@ -97,21 +122,11 @@ class TutorialViewController: UIViewController {
   }
     
   func showAndrewIDAlert() {
-    let message = "Enter Andrew ID."
-    let pushPrompt = UIAlertController(title: "Enter Andrew ID", message: message, preferredStyle: .alert)
-      
-    let ok = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-      persistData.andrewID = (pushPrompt.textFields![0].text)!
+    let bundle = Bundle.main
+       let samplePath = bundle.url(forResource: "sample", withExtension: "pdf")
+       displayShareSheet(shareContent: samplePath as Any)
+
       self.alamofireUpload()
-    })
-    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in })
-    
-    pushPrompt.addAction(ok)
-    pushPrompt.addAction(cancel)
-    pushPrompt.addTextField { (textField : UITextField!) -> Void in
-      textField.placeholder = "Enter Andrew ID"
-    }
-    present(pushPrompt, animated: true, completion: nil)
   }
 
 }
