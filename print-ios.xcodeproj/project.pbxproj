@@ -48,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		09FC8DA7DE713F9438638189 /* Pods-ScottyLabs Print App-ScottyLabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App-ScottyLabs.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App-ScottyLabs/Pods-ScottyLabs Print App-ScottyLabs.release.xcconfig"; sourceTree = "<group>"; };
-		29BCE8931E1ADB26008451C5 /* ScottyLabs Print.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScottyLabs Print.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29BCE8931E1ADB26008451C5 /* ScottyLabs Print App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScottyLabs Print App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BCE8961E1ADB26008451C5 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		29BCE8981E1ADB26008451C5 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		29BCE89D1E1ADB26008451C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		29BCE8941E1ADB26008451C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29BCE8931E1ADB26008451C5 /* ScottyLabs Print.app */,
+				29BCE8931E1ADB26008451C5 /* ScottyLabs Print App.app */,
 				29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */,
 			);
 			name = Products;
@@ -188,7 +188,7 @@
 			);
 			name = "print-ios";
 			productName = "ScottyLabs Print App";
-			productReference = 29BCE8931E1ADB26008451C5 /* ScottyLabs Print.app */;
+			productReference = 29BCE8931E1ADB26008451C5 /* ScottyLabs Print App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		29BCE8B41E1ADD6D008451C5 /* print-ios-extension */ = {
@@ -513,7 +513,7 @@
 				INFOPLIST_FILE = "print-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.scottylabs.print-ios";
-				PRODUCT_NAME = "ScottyLabs Print";
+				PRODUCT_NAME = "ScottyLabs Print App";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -529,7 +529,7 @@
 				INFOPLIST_FILE = "print-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.scottylabs.print-ios";
-				PRODUCT_NAME = "ScottyLabs Print";
+				PRODUCT_NAME = "ScottyLabs Print App";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

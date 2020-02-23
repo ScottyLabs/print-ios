@@ -1,82 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u0G-Ij-yob">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u0G-Ij-yob">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tutorial View Controller-->
         <scene sceneID="NR7-du-m34">
             <objects>
-                <viewController id="u0G-Ij-yob" customClass="TutorialViewController" customModule="ScottyLabs_Print" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u0G-Ij-yob" customClass="TutorialViewController" customModule="ScottyLabs_Print_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cek-2W-5ym"/>
                         <viewControllerLayoutGuide type="bottom" id="56i-Pq-K5D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SEY-h8-v5H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="TQd-zN-nUj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.096654570960000005" green="0.12029160229999999" blue="0.15881558940000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="TQd-zN-nUj">
+                                <rect key="frame" x="0.0" y="130.66666666666663" width="414" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TQd-zN-nUj" secondAttribute="height" multiplier="414:325" id="Dbc-Ps-8ov"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgz-AC-6LC">
-                                <rect key="frame" x="159" y="188" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Andrew ID" minimumFontSize="17" id="fj0-oL-fMC">
-                                <rect key="frame" x="44" y="407" width="131" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
-                            </textField>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kr-Zt-qn6">
-                                <rect key="frame" x="219" y="410" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <state key="normal" title="SET ANDREW ID">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="jqj-xy-mLv"/>
-                                    <action selector="submitIDbuttonClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="jCz-S2-8P0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taq-dN-vm2">
-                                <rect key="frame" x="263" y="465" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clearButtonClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="gAB-Pe-UP5"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kvo-4J-eHd">
-                                <rect key="frame" x="133" y="484" width="108" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZe-rP-iEv">
+                                <rect key="frame" x="20" y="405.66666666666669" width="374" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Default Andrew ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvo-4J-eHd">
+                                        <rect key="frame" x="20" y="14" width="146.66666666666666" height="22"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Andrew ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fj0-oL-fMC">
+                                        <rect key="frame" x="186.66666666666663" y="8" width="159.33333333333337" height="34"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                        <connections>
+                                            <action selector="onAndrewIDChange" destination="u0G-Ij-yob" eventType="editingChanged" id="0it-6s-cTc"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="fj0-oL-fMC" secondAttribute="trailing" constant="20" id="BIO-zT-ufz"/>
+                                    <constraint firstItem="Kvo-4J-eHd" firstAttribute="centerY" secondItem="vZe-rP-iEv" secondAttribute="centerY" id="Rdy-dU-hv3"/>
+                                    <constraint firstItem="Kvo-4J-eHd" firstAttribute="leading" secondItem="vZe-rP-iEv" secondAttribute="leading" constant="20" id="Vve-V2-dkp"/>
+                                    <constraint firstAttribute="height" constant="50" id="efE-6I-Oho"/>
+                                    <constraint firstItem="fj0-oL-fMC" firstAttribute="leading" secondItem="Kvo-4J-eHd" secondAttribute="trailing" constant="20" id="gKi-Jy-SW7"/>
+                                    <constraint firstItem="fj0-oL-fMC" firstAttribute="centerY" secondItem="vZe-rP-iEv" secondAttribute="centerY" id="qE4-8K-lGA"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12415651229999999" green="0.15981069210000001" blue="0.21382343770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TQd-zN-nUj" firstAttribute="leading" secondItem="SEY-h8-v5H" secondAttribute="leading" id="2GW-8m-TQ8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vZe-rP-iEv" secondAttribute="trailing" id="3Pu-g4-Sjp"/>
+                            <constraint firstItem="TQd-zN-nUj" firstAttribute="centerY" secondItem="SEY-h8-v5H" secondAttribute="centerY" constant="-75" id="C9Q-Z5-Kkg"/>
+                            <constraint firstItem="vZe-rP-iEv" firstAttribute="leading" secondItem="SEY-h8-v5H" secondAttribute="leadingMargin" id="huc-1P-g2X"/>
+                            <constraint firstAttribute="trailing" secondItem="TQd-zN-nUj" secondAttribute="trailing" id="iH2-wg-hfz"/>
+                            <constraint firstItem="vZe-rP-iEv" firstAttribute="top" secondItem="TQd-zN-nUj" secondAttribute="bottom" constant="-50" id="lof-dB-r8B"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="andrewIDTextField" destination="fj0-oL-fMC" id="KKs-77-Bhb"/>
-                        <outlet property="clearButton" destination="taq-dN-vm2" id="mbH-N4-EPT"/>
-                        <outlet property="displayAndrewID" destination="Kvo-4J-eHd" id="geB-UM-XDU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uc-DH-kXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117.5999999999999" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1117.3913043478262" y="133.25892857142856"/>
         </scene>
     </scenes>
     <resources>
