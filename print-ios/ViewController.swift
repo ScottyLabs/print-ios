@@ -1,28 +1,25 @@
 import UIKit
-import Alamofire
-import SwiftyJSON
 
+// Constants
+let andrewIDKey = "andrewID"
 
-struct persistData {
-  static var andrewID = ""
-  static var savedEnteredText = ""
-}
+class TutorialViewController: UIViewController {
 
+  @IBOutlet weak var andrewIDTextField: UITextField!
 
-class ViewController: UIViewController {
-    
+  
   override func viewDidLoad() {
-      super.viewDidLoad()
-  }
+    super.viewDidLoad()
     
-    @IBAction func inputAndrewID(_ sender: Any) {
+    // Load Andrew ID from UserDefaults
+    andrewIDTextField.text = UserDefaults.standard.object(forKey: andrewIDKey) as? String
+  }
+  
+  @IBAction func onAndrewIDChange() {
+    if let newAndrewID = andrewIDTextField.text {
+      print("Setting New Andrew ID: \(newAndrewID)")
+      UserDefaults.standard.set(newAndrewID, forKey: andrewIDKey)
     }
-    override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
   }
-    
-  override var prefersStatusBarHidden: Bool {
-      return true
-  }
-    
+
 }
