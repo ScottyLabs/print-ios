@@ -91,7 +91,7 @@ class EnterTextViewController: UIViewController, UITextViewDelegate {
         multipartFormData.append(data, withName: "file", fileName: "ScottyLabs.txt", mimeType: "text/plain")
       }
 
-    }, to: "http://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
+    }, to: "https://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
             
       switch result {
       case .success(let upload, _, _):

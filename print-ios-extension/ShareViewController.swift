@@ -72,7 +72,7 @@ class ShareViewController: SLComposeServiceViewController {
         multipartFormData.append(data, withName: "file", fileName: self.contentText + ".pdf", mimeType: "application/pdf")
       }
             
-    }, to: "http://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
+    }, to: "https://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
             
       switch result {
       case .success(let upload, _, _):
