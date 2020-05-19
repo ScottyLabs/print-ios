@@ -3,7 +3,7 @@ import UIKit
 // Constants
 let andrewIDKey = "andrewID"
 
-class TutorialViewController: UIViewController {
+class ViewController: UIViewController {
 
   @IBOutlet weak var andrewIDTextField: UITextField!
 
