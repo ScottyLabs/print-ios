@@ -12,7 +12,7 @@
 		29BCE8A11E1ADB26008451C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE89F1E1ADB26008451C5 /* LaunchScreen.storyboard */; };
 		29BCE8AB1E1ADBB9008451C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */; };
 		29BCE8B81E1ADD6D008451C5 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */; };
-		29BCE8BB1E1ADD6D008451C5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE8B91E1ADD6D008451C5 /* MainInterface.storyboard */; };
+		29BCE8BB1E1ADD6D008451C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE8B91E1ADD6D008451C5 /* Main.storyboard */; };
 		390C32B1E515EADCDD3C7141 /* Pods_print_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */; };
 		8FDD6CCBBB34669DD96E9483 /* Pods_print_ios_print_ios_extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DE0FF7BA2142DEA62664DC /* Pods_print_ios_print_ios_extension.framework */; };
 		C17DD4142381D676006BF669 /* Print to ScottyLabs.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -54,7 +54,7 @@
 		29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Print to ScottyLabs.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		29BCE8BA1E1ADD6D008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		29BCE8BA1E1ADD6D008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29BCE8BC1E1ADD6D008451C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31DE0FF7BA2142DEA62664DC /* Pods_print_ios_print_ios_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_print_ios_print_ios_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BB787FB94F188DBFA90F17 /* Pods-print-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios/Pods-print-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */,
-				29BCE8B91E1ADD6D008451C5 /* MainInterface.storyboard */,
+				29BCE8B91E1ADD6D008451C5 /* Main.storyboard */,
 				29BCE8BC1E1ADD6D008451C5 /* Info.plist */,
 			);
 			path = "print-ios-extension";
@@ -215,7 +215,7 @@
 				TargetAttributes = {
 					29BCE8921E1ADB26008451C5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 79RKWTYNRS;
+						DevelopmentTeam = K72FJPB7L5;
 						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -267,7 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29BCE8BB1E1ADD6D008451C5 /* MainInterface.storyboard in Resources */,
+				29BCE8BB1E1ADD6D008451C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,12 +369,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		29BCE8B91E1ADD6D008451C5 /* MainInterface.storyboard */ = {
+		29BCE8B91E1ADD6D008451C5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				29BCE8BA1E1ADD6D008451C5 /* Base */,
 			);
-			name = MainInterface.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

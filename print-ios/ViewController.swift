@@ -15,6 +15,8 @@ class TutorialViewController: UIViewController {
     andrewIDTextField.text = UserDefaults.standard.object(forKey: andrewIDKey) as? String
   }
   
+  // TODO: It should be updated upon finish instead of change
+  // Also, it should have a "Save" button
   @IBAction func onAndrewIDChange() {
     if let newAndrewID = andrewIDTextField.text {
       print("Setting New Andrew ID: \(newAndrewID)")
