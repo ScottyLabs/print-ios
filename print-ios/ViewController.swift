@@ -3,7 +3,7 @@ import UIKit
 // Constants
 let andrewIDKey = "andrewID"
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     // Properties
     @IBOutlet weak var andrewIDTextField: UITextField!
@@ -15,13 +15,26 @@ class ViewController: UIViewController {
         
         // Load Andrew ID from UserDefaults
         andrewIDTextField.text = UserDefaults.standard.object(forKey: andrewIDKey) as? String
+        
+        // Make this controller the delegate for the text field
+        andrewIDTextField.delegate = self
     }
     
-    @IBAction func onAndrewIDEnd(_ sender: Any) {
-        if let newAndrewID = andrewIDTextField.text {
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let newAndrewID = textField.text {
             print("Setting New Andrew ID: \(newAndrewID)")
             UserDefaults.standard.set(newAndrewID, forKey: andrewIDKey)
         }
     }
+    
+    
+    
+
     
 }

@@ -39,9 +39,6 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
-                                        <connections>
-                                            <action selector="onAndrewIDEnd:" destination="u0G-Ij-yob" eventType="editingDidEnd" id="J8Z-gA-4xk"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
