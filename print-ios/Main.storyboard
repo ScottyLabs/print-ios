@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                         <connections>
-                                            <action selector="onAndrewIDChange" destination="u0G-Ij-yob" eventType="editingChanged" id="0it-6s-cTc"/>
+                                            <action selector="onAndrewIDEnd:" destination="u0G-Ij-yob" eventType="editingDidEnd" id="J8Z-gA-4xk"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -135,6 +135,8 @@
                     <navigationItem key="navigationItem" id="JP2-LL-rDb"/>
                     <connections>
                         <outlet property="andrewIDTextField" destination="fj0-oL-fMC" id="KKs-77-Bhb"/>
+                        <outlet property="feedbackBtn" destination="oIo-Za-O5C" id="KY9-cT-WDs"/>
+                        <outlet property="mapBtn" destination="bxS-fI-qTn" id="IJm-pl-qPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uc-DH-kXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
