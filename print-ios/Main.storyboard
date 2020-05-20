@@ -113,6 +113,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="vfo-0p-Ap4" kind="show" id="Zgs-sh-eOc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -145,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="2934.7826086956525" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Instructions-->
         <scene sceneID="A5T-6C-EwC">
             <objects>
                 <viewController id="FLg-q5-F29" sceneMemberID="viewController">
@@ -154,26 +157,33 @@
                         <viewControllerLayoutGuide type="bottom" id="HcF-Ha-BZX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2bB-yH-ccG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-sR-Pdd">
-                                <rect key="frame" x="123" y="94" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-sR-Pdd">
+                                <rect key="frame" x="20" y="73" width="374" height="210"/>
+                                <string key="text">(Arvin is making it an action extension instead of a share extension, important distinction). Anyways, basically click the share button and scroll down until you see "CMU Print". Fill out form and click it.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tMG-sR-Pdd" firstAttribute="top" secondItem="1Bc-jF-pIZ" secondAttribute="bottom" constant="73" id="6bh-0r-l9j"/>
+                            <constraint firstItem="HcF-Ha-BZX" firstAttribute="top" secondItem="tMG-sR-Pdd" secondAttribute="bottom" constant="491" id="Q28-aY-SDp"/>
+                            <constraint firstItem="tMG-sR-Pdd" firstAttribute="leading" secondItem="2bB-yH-ccG" secondAttribute="leadingMargin" id="SrZ-if-q51"/>
+                            <constraint firstItem="tMG-sR-Pdd" firstAttribute="trailing" secondItem="2bB-yH-ccG" secondAttribute="trailingMargin" id="iOo-Up-SW7"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QpL-56-k6I"/>
+                    <navigationItem key="navigationItem" title="Instructions" id="QpL-56-k6I"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwv-sv-bM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3668.115942028986" y="129.91071428571428"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Printer Map-->
         <scene sceneID="5MA-RT-0g6">
             <objects>
                 <viewController id="ncm-dX-Ln1" customClass="MapViewController" customModule="CMU_Print" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,15 +192,62 @@
                         <viewControllerLayoutGuide type="bottom" id="HB2-YG-YWL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J4c-p2-c23">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KO1-3K-a1l"/>
+                    <navigationItem key="navigationItem" title="Printer Map" id="KO1-3K-a1l"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRe-g0-Gae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4428.985507246377" y="129.91071428571428"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="awc-zG-LN2">
+            <objects>
+                <viewController id="vfo-0p-Ap4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Baf-Jy-1yR"/>
+                        <viewControllerLayoutGuide type="bottom" id="HKY-Tm-Ze1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Uw-uC-wMI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by ScottyLabs. Email hello@scottylabs.org or tech@scottylabs.org to learn more." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1O-Bo-BwM">
+                                <rect key="frame" x="20" y="41" width="374" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members who've worked on this project include Richard Guo, Arvin Wu, Clara Wang, Srinivas Lade, Youseff Kallel, Josh Zhanson" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEm-Mr-xeK">
+                                <rect key="frame" x="20" y="175" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="IBQ-cX-KOF"/>
+                                    <constraint firstAttribute="height" constant="61" id="yo9-W4-kVV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CEm-Mr-xeK" firstAttribute="top" secondItem="f1O-Bo-BwM" secondAttribute="bottom" constant="73" id="JYw-Aq-TrI"/>
+                            <constraint firstItem="f1O-Bo-BwM" firstAttribute="leading" secondItem="9Uw-uC-wMI" secondAttribute="leadingMargin" id="UNI-ZC-2ho"/>
+                            <constraint firstItem="f1O-Bo-BwM" firstAttribute="top" secondItem="Baf-Jy-1yR" secondAttribute="bottom" constant="41" id="Zqb-t1-maZ"/>
+                            <constraint firstItem="CEm-Mr-xeK" firstAttribute="trailing" secondItem="9Uw-uC-wMI" secondAttribute="trailingMargin" id="cTn-wg-zZU"/>
+                            <constraint firstItem="CEm-Mr-xeK" firstAttribute="leading" secondItem="9Uw-uC-wMI" secondAttribute="leadingMargin" id="hbz-dT-K5x"/>
+                            <constraint firstItem="f1O-Bo-BwM" firstAttribute="trailing" secondItem="9Uw-uC-wMI" secondAttribute="trailingMargin" id="o1N-wF-hTf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="Qxo-2Q-cwa"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8k-BA-zGp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5107.2463768115949" y="129.91071428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fjh-b9-KR0">
