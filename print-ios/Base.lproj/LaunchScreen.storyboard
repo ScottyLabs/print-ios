@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,16 +20,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="I39-7x-amd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="185.66666666666663" width="414" height="325"/>
                                 <color key="backgroundColor" red="0.12415651229999999" green="0.15981069210000001" blue="0.21382343770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I39-7x-amd" secondAttribute="height" multiplier="414:325" id="pmC-62-JTj"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12415651229999999" green="0.15981069210000001" blue="0.21382343770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="I39-7x-amd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="7ab-H5-jOr"/>
-                            <constraint firstAttribute="bottom" secondItem="I39-7x-amd" secondAttribute="bottom" id="cEC-Pc-grs"/>
-                            <constraint firstItem="I39-7x-amd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dgK-7d-SXU"/>
-                            <constraint firstAttribute="trailing" secondItem="I39-7x-amd" secondAttribute="trailing" id="oTk-OF-mOU"/>
+                            <constraint firstItem="I39-7x-amd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="65P-oG-TjY"/>
+                            <constraint firstItem="I39-7x-amd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="Deo-yZ-F7A"/>
+                            <constraint firstAttribute="trailing" secondItem="I39-7x-amd" secondAttribute="trailing" id="GMV-qj-4UQ"/>
                         </constraints>
                     </view>
                 </viewController>

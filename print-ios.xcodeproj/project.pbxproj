@@ -18,6 +18,8 @@
 		C17DD4142381D676006BF669 /* Print to ScottyLabs.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C18DDD3424024287002EC511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DDD3324024287002EC511 /* ViewController.swift */; };
 		FB85F2AA24733D1400ED59A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2A924733D1400ED59A3 /* .gitignore */; };
+		FB85F2AE2474AC0600ED59A3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */; };
+		FB85F2B42474AF1400ED59A3 /* printers-labs-map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +49,13 @@
 /* Begin PBXFileReference section */
 		09FC8DA7DE713F9438638189 /* Pods-ScottyLabs Print App-ScottyLabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App-ScottyLabs.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App-ScottyLabs/Pods-ScottyLabs Print App-ScottyLabs.release.xcconfig"; sourceTree = "<group>"; };
 		29BCE8931E1ADB26008451C5 /* CMU Print.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMU Print.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29BCE8961E1ADB26008451C5 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
+		29BCE8961E1ADB26008451C5 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 4; };
 		29BCE89D1E1ADB26008451C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29BCE8A01E1ADB26008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29BCE8A21E1ADB26008451C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Print to ScottyLabs.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		29BCE8BA1E1ADD6D008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29BCE8BC1E1ADD6D008451C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31DE0FF7BA2142DEA62664DC /* Pods_print_ios_print_ios_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_print_ios_print_ios_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,9 @@
 		CB9AD6B2A453C526C6B8B3C4 /* Pods-print-ios-print-ios-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios-print-ios-extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios-print-ios-extension/Pods-print-ios-print-ios-extension.debug.xcconfig"; sourceTree = "<group>"; };
 		DAF0DC0E77A6B46E973CF5B9 /* Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App-ScottyLabs/Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig"; sourceTree = "<group>"; };
 		FB85F2A924733D1400ED59A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "printers-labs-map.pdf"; sourceTree = "<group>"; };
+		FB85F2B32474AF1400ED59A3 /* icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_full.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +129,9 @@
 				0315E9DD3B9A954E57865933 /* Pods */,
 				04661564A9685FE3E52D4C58 /* Frameworks */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 		};
 		29BCE8941E1ADB26008451C5 /* Products */ = {
 			isa = PBXGroup;
@@ -140,10 +145,12 @@
 		29BCE8951E1ADB26008451C5 /* print-ios */ = {
 			isa = PBXGroup;
 			children = (
+				FB85F2B12474AEEC00ED59A3 /* Resources */,
 				C18DDD35240243F7002EC511 /* print-ios.entitlements */,
 				29BCE8961E1ADB26008451C5 /* AppDelegate.swift */,
-				29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */,
 				C18DDD3324024287002EC511 /* ViewController.swift */,
+				FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */,
+				29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */,
 				29BCE89D1E1ADB26008451C5 /* Assets.xcassets */,
 				29BCE89F1E1ADB26008451C5 /* LaunchScreen.storyboard */,
 				29BCE8A21E1ADB26008451C5 /* Info.plist */,
@@ -159,6 +166,15 @@
 				29BCE8BC1E1ADD6D008451C5 /* Info.plist */,
 			);
 			path = "print-ios-extension";
+			sourceTree = "<group>";
+		};
+		FB85F2B12474AEEC00ED59A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB85F2B32474AF1400ED59A3 /* icon_full.png */,
+				FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +275,7 @@
 				FB85F2AA24733D1400ED59A3 /* .gitignore in Resources */,
 				29BCE8AB1E1ADBB9008451C5 /* Main.storyboard in Resources */,
 				29BCE8A11E1ADB26008451C5 /* LaunchScreen.storyboard in Resources */,
+				FB85F2B42474AF1400ED59A3 /* printers-labs-map.pdf in Resources */,
 				29BCE89E1E1ADB26008451C5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18DDD3424024287002EC511 /* ViewController.swift in Sources */,
+				FB85F2AE2474AC0600ED59A3 /* MapViewController.swift in Sources */,
 				29BCE8971E1ADB26008451C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
