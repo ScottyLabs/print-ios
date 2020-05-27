@@ -1,26 +1,136 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Share View Controller-->
-        <scene sceneID="ceB-am-kn3">
+        <!--Image-->
+        <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8bI-gs-bmD"/>
-                        <viewControllerLayoutGuide type="bottom" id="d5i-Ba-RvD"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="Image" id="ObA-dk-sSI" customClass="ActionViewController" customModule="print_ios_extension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-Dm-cuz">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="3HJ-uW-3hn">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="WYi-yp-eM6">
+                                            <connections>
+                                                <action selector="done" destination="ObA-dk-sSI" id="Qdu-qn-U6V"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2u-Se-LAb">
+                                <rect key="frame" x="166" y="173" width="98" height="30"/>
+                                <state key="normal" title="Set Andrew ID"/>
+                                <connections>
+                                    <action selector="onButtonClick:" destination="ObA-dk-sSI" eventType="touchUpInside" id="WtM-wF-FS3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-RV-rF4">
+                                <rect key="frame" x="61" y="171" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0J9-rX-ItH">
+                                <rect key="frame" x="0.0" y="269" width="320" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrew ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-lV-Fgk">
+                                <rect key="frame" x="67" y="128" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-qE-fIy">
+                                <rect key="frame" x="144" y="486" width="32" height="30"/>
+                                <state key="normal" title="Print"/>
+                                <connections>
+                                    <action selector="printClick:" destination="ObA-dk-sSI" eventType="touchDown" id="eDu-j9-BcY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-uU-hPw">
+                                <rect key="frame" x="13" y="307" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="cBF-uH-YGy">
+                                <rect key="frame" x="170" y="225" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="Bzd-3w-OBR"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-YB-hhY">
+                                <rect key="frame" x="72" y="231" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Print Options:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JV-rH-Bm3">
+                                <rect key="frame" x="108" y="278" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnT-6T-69N">
+                                <rect key="frame" x="13" y="486" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select File"/>
+                                <connections>
+                                    <action selector="PickFile:" destination="ObA-dk-sSI" eventType="touchUpInside" id="jmR-ov-bpC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0J9-rX-ItH" firstAttribute="top" secondItem="cBF-uH-YGy" secondAttribute="bottom" constant="12" id="5yK-oh-Zrn"/>
+                            <constraint firstItem="n2u-Se-LAb" firstAttribute="trailing" secondItem="cBF-uH-YGy" secondAttribute="trailing" id="8uR-pB-EKa"/>
+                            <constraint firstItem="n2u-Se-LAb" firstAttribute="leading" secondItem="M9v-RV-rF4" secondAttribute="trailing" constant="73" id="Aif-fZ-Pav"/>
+                            <constraint firstItem="J3z-YB-hhY" firstAttribute="centerY" secondItem="cBF-uH-YGy" secondAttribute="centerY" id="E2P-zo-DhE"/>
+                            <constraint firstItem="eKq-uU-hPw" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="13" id="FYK-Mt-YOv"/>
+                            <constraint firstItem="xyf-lV-Fgk" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="40" id="GBI-ww-F5Z"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="0J9-rX-ItH" secondAttribute="leading" id="Ghn-1x-F6f"/>
+                            <constraint firstItem="J3z-YB-hhY" firstAttribute="top" secondItem="M9v-RV-rF4" secondAttribute="bottom" constant="26" id="IEN-Pa-WB7"/>
+                            <constraint firstItem="eKq-uU-hPw" firstAttribute="top" secondItem="cBF-uH-YGy" secondAttribute="bottom" constant="50" id="LYS-hz-oDb"/>
+                            <constraint firstItem="M9v-RV-rF4" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="61" id="OTH-4h-vRR"/>
+                            <constraint firstItem="M9v-RV-rF4" firstAttribute="top" secondItem="xyf-lV-Fgk" secondAttribute="bottom" constant="22" id="OxF-H0-5yI"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="VVe-Uw-JpX" secondAttribute="top" id="SyM-yo-pPn"/>
+                            <constraint firstItem="n2u-Se-LAb" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="85" id="YHi-KN-pNM"/>
+                            <constraint firstItem="SgA-qE-fIy" firstAttribute="top" secondItem="0J9-rX-ItH" secondAttribute="bottom" constant="1" id="ZCI-CH-ZMj"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="trailing" secondItem="0J9-rX-ItH" secondAttribute="trailing" id="cJE-Kc-8GD"/>
+                            <constraint firstItem="0J9-rX-ItH" firstAttribute="centerX" secondItem="eKq-uU-hPw" secondAttribute="centerX" id="cSR-ZB-Ikb"/>
+                            <constraint firstItem="xyf-lV-Fgk" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="67" id="gcs-ef-NEC"/>
+                            <constraint firstItem="cBF-uH-YGy" firstAttribute="top" secondItem="n2u-Se-LAb" secondAttribute="bottom" constant="22" id="kHh-iy-rHt"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="rbn-0X-DNQ"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="bottom" secondItem="SgA-qE-fIy" secondAttribute="bottom" constant="12" id="tQZ-Dh-a0h"/>
+                            <constraint firstItem="M9v-RV-rF4" firstAttribute="centerX" secondItem="J3z-YB-hhY" secondAttribute="centerX" id="tb3-yQ-v6T"/>
+                            <constraint firstItem="eKq-uU-hPw" firstAttribute="centerX" secondItem="SgA-qE-fIy" secondAttribute="centerX" id="vnE-Sc-env"/>
+                            <constraint firstItem="cBF-uH-YGy" firstAttribute="leading" secondItem="J3z-YB-hhY" secondAttribute="trailing" constant="87" id="yzb-ci-bVJ"/>
+                            <constraint firstItem="M9v-RV-rF4" firstAttribute="centerY" secondItem="n2u-Se-LAb" secondAttribute="centerY" id="z4c-Yn-9ww"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VVe-Uw-JpX"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="andrewIDLabel" destination="xyf-lV-Fgk" id="rHc-eR-QcQ"/>
+                        <outlet property="andrewIDTextField" destination="M9v-RV-rF4" id="SND-zS-IJO"/>
+                        <outlet property="printOptionPicker" destination="0J9-rX-ItH" id="GeL-sa-xVg"/>
+                        <outlet property="printOptionTextField" destination="eKq-uU-hPw" id="BoO-7h-cIO"/>
+                        <outlet property="quantityLabel" destination="J3z-YB-hhY" id="Jac-1q-7cm"/>
+                        <outlet property="stepper" destination="cBF-uH-YGy" id="gVw-PQ-jRe"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="101.78571428571428"/>
         </scene>
     </scenes>
 </document>
