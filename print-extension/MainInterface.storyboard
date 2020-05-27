@@ -46,7 +46,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 copy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-YB-hhY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 copy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-YB-hhY" userLabel="Number Copies Label">
                                 <rect key="frame" x="25" y="319" width="105" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="G5M-so-yMY"/>
@@ -75,8 +75,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-WY-UIV">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-WY-UIV" userLabel="Number Copies Stepper">
                                 <rect key="frame" x="183" y="319" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="0uR-dS-K9d"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1N-pX-xKd">
                                 <rect key="frame" x="167" y="188" width="127" height="34"/>
@@ -147,9 +150,9 @@
                     <connections>
                         <outlet property="andrewIDTextField" destination="M9v-RV-rF4" id="SND-zS-IJO"/>
                         <outlet property="fileNameTextField" destination="u1N-pX-xKd" id="LzW-6Q-8FE"/>
+                        <outlet property="numCopiesLabel" destination="J3z-YB-hhY" id="DmO-xq-JTH"/>
+                        <outlet property="numCopiesStepper" destination="2Cp-WY-UIV" id="mD7-wQ-Xr3"/>
                         <outlet property="printOptionTextField" destination="eKq-uU-hPw" id="BoO-7h-cIO"/>
-                        <outlet property="quantityLabel" destination="J3z-YB-hhY" id="Jac-1q-7cm"/>
-                        <outlet property="stepper" destination="2Cp-WY-UIV" id="ZjI-fq-pdj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -27,8 +27,9 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var printOptionTextField: UITextField!
     
     // for num copies
-    @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var numCopiesLabel: UILabel!
+    @IBOutlet weak var numCopiesStepper: UIStepper!
+    
     
     
     // MARK: Initialization
@@ -37,6 +38,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // perform initializations
         initializeAndrewIDTextField()
         initializeFileNameTextField()
         initializePrintOptions()
@@ -127,16 +129,9 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     
-    // MARK: Text Field Handlers
-    
-    
-    
-    
     // MARK: Buttons
     
-//    @IBAction func stepperValueChanged(_ sender: UIStepper) {
-//        quantityLabel.text = Int(sender.value).description
-//    }
+
     
     @IBAction func done() {
         // Return any edited content to the host app.
@@ -145,19 +140,13 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-    
-    
-    
     // MARK: Print Option Picker
     
     // to be viewed via picker UI
     let options = ["One-sided",
                    "Two-sided (portrait)",
                    "Two-sided (landscape)"]
-    // for the request to print API
-    let codedOptions = ["one-sided",
-                        "two-sided-long-edge",
-                        "two-sided-short-edge"]
+    
     
     // just to initialize the text field
     func initializePrintOptions() {
@@ -213,15 +202,32 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // MARK: Num Copies
     
-    // initializes information for num copies and stepper
+    // initializes information for num copies
     func initializeNumCopies() {
         //for stepper
-        stepper.wraps = false
-        stepper.autorepeat = true
-        stepper.maximumValue = 100
+        numCopiesStepper.wraps = false
+        numCopiesStepper.autorepeat = true
+        numCopiesStepper.maximumValue = 100
+        numCopiesStepper.minimumValue = 1
     }
     
+    // sets new text of num copies upon stepper value change
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        let numCopies = Int(sender.value)
+        var copiesText = "copies"
+        if (numCopies == 1) {
+            copiesText = "copy"
+        }
+        numCopiesLabel.text = String(numCopies) + " " + copiesText
+    }
+    
+    
     // MARK: Print
+    
+    // for the request to print API
+    let codedOptions = ["one-sided",
+                        "two-sided-long-edge",
+                        "two-sided-short-edge"]
     
     @IBAction func printClick(_ sender: Any) {
         //var pdfURL: URL? { get };
