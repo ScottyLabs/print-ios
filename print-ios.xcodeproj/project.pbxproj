@@ -11,15 +11,18 @@
 		29BCE89E1E1ADB26008451C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE89D1E1ADB26008451C5 /* Assets.xcassets */; };
 		29BCE8A11E1ADB26008451C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE89F1E1ADB26008451C5 /* LaunchScreen.storyboard */; };
 		29BCE8AB1E1ADBB9008451C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */; };
-		8BE50B8723E605F0006BBEB3 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50B8623E605F0006BBEB3 /* ActionViewController.swift */; };
-		29BCE8B81E1ADD6D008451C5 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */; };
 		390C32B1E515EADCDD3C7141 /* Pods_print_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */; };
-		8FDD6CCBBB34669DD96E9483 /* Pods_print_ios_print_ios_extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DE0FF7BA2142DEA62664DC /* Pods_print_ios_print_ios_extension.framework */; };
-		C17DD4142381D676006BF669 /* Print to ScottyLabs.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8BE50B8723E605F0006BBEB3 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50B8623E605F0006BBEB3 /* ActionViewController.swift */; };
 		C18DDD3424024287002EC511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DDD3324024287002EC511 /* ViewController.swift */; };
 		FB85F2AA24733D1400ED59A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2A924733D1400ED59A3 /* .gitignore */; };
 		FB85F2AE2474AC0600ED59A3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */; };
 		FB85F2B42474AF1400ED59A3 /* printers-labs-map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */; };
+		FBE92437247E1998006A8CFC /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE92436247E1998006A8CFC /* Media.xcassets */; };
+		FBE92439247E1998006A8CFC /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE92438247E1998006A8CFC /* ActionViewController.swift */; };
+		FBE9243C247E1998006A8CFC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE9243A247E1998006A8CFC /* MainInterface.storyboard */; };
+		FBE92440247E1998006A8CFC /* print-extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FBE92434247E1998006A8CFC /* print-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FBE92446247E1AC0006A8CFC /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE92444247E1AC0006A8CFC /* Media.xcassets */; };
+		FBE92447247E1AC0006A8CFC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FBE92445247E1AC0006A8CFC /* Base.lproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,13 @@
 			remoteGlobalIDString = 8BE50B8123E605F0006BBEB3;
 			remoteInfo = "print-ios-extension";
 		};
+		FBE9243E247E1998006A8CFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29BCE88B1E1ADB26008451C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBE92433247E1998006A8CFC;
+			remoteInfo = "print-extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8BE50B8E23E605F0006BBEB3 /* print-ios-extension.appex in Embed App Extensions */,
+				FBE92440247E1998006A8CFC /* print-extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,21 +64,15 @@
 		29BCE8A01E1ADB26008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29BCE8A21E1ADB26008451C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Print to ScottyLabs.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
-		29BCE8BA1E1ADD6D008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29BCE8BC1E1ADD6D008451C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31DE0FF7BA2142DEA62664DC /* Pods_print_ios_print_ios_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_print_ios_print_ios_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BB787FB94F188DBFA90F17 /* Pods-print-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios/Pods-print-ios.release.xcconfig"; sourceTree = "<group>"; };
 		6A0C3BC38402A95F6653ABAD /* Pods-ScottyLabs Print App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App/Pods-ScottyLabs Print App.release.xcconfig"; sourceTree = "<group>"; };
 		6FF9337F32C2938227FEFAC7 /* Pods-print-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios/Pods-print-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		81096B0AD068033A1DC03E62 /* Pods-ScottyLabs Print App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App/Pods-ScottyLabs Print App.debug.xcconfig"; sourceTree = "<group>"; };
-		8BE50B8223E605F0006BBEB3 /* print-ios-extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "print-ios-extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BE50B8423E605F0006BBEB3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8BE50B8623E605F0006BBEB3 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		8BE50B8923E605F0006BBEB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		8BE50B8B23E605F0006BBEB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BE50BCE23E67301006BBEB3 /* ScottyLabs PrintDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ScottyLabs PrintDebug.entitlements"; sourceTree = "<group>"; };
 		A997F1D54B12DF45E462B0C0 /* Pods-print-ios-print-ios-extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios-print-ios-extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios-print-ios-extension/Pods-print-ios-print-ios-extension.release.xcconfig"; sourceTree = "<group>"; };
 		C18DDD3324024287002EC511 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C18DDD35240243F7002EC511 /* print-ios.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "print-ios.entitlements"; sourceTree = "<group>"; };
@@ -79,6 +83,14 @@
 		FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "printers-labs-map.pdf"; sourceTree = "<group>"; };
 		FB85F2B32474AF1400ED59A3 /* icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_full.png; sourceTree = "<group>"; };
+		FBE9242F247E192F006A8CFC /* print-ios-extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "print-ios-extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE92434247E1998006A8CFC /* print-extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "print-extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE92436247E1998006A8CFC /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FBE92438247E1998006A8CFC /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		FBE9243B247E1998006A8CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FBE9243D247E1998006A8CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBE92444247E1AC0006A8CFC /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FBE92445247E1AC0006A8CFC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8BE50B7F23E605F0006BBEB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE92431247E1998006A8CFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,6 +149,7 @@
 				FB85F2A924733D1400ED59A3 /* .gitignore */,
 				29BCE8951E1ADB26008451C5 /* print-ios */,
 				8BE50B8323E605F0006BBEB3 /* print-ios-extension */,
+				FBE92435247E1998006A8CFC /* print-extension */,
 				29BCE8941E1ADB26008451C5 /* Products */,
 				0315E9DD3B9A954E57865933 /* Pods */,
 				04661564A9685FE3E52D4C58 /* Frameworks */,
@@ -142,7 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				29BCE8931E1ADB26008451C5 /* CMU Print.app */,
-				29BCE8B51E1ADD6D008451C5 /* Print to ScottyLabs.appex */,
+				FBE9242F247E192F006A8CFC /* print-ios-extension.appex */,
+				FBE92434247E1998006A8CFC /* print-extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +187,8 @@
 		8BE50B8323E605F0006BBEB3 /* print-ios-extension */ = {
 			isa = PBXGroup;
 			children = (
+				FBE92445247E1AC0006A8CFC /* Base.lproj */,
+				FBE92444247E1AC0006A8CFC /* Media.xcassets */,
 				29BCE8B71E1ADD6D008451C5 /* ShareViewController.swift */,
 				8BE50B8623E605F0006BBEB3 /* ActionViewController.swift */,
 				29BCE8B91E1ADD6D008451C5 /* Main.storyboard */,
@@ -181,6 +204,17 @@
 				FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FBE92435247E1998006A8CFC /* print-extension */ = {
+			isa = PBXGroup;
+			children = (
+				FBE92436247E1998006A8CFC /* Media.xcassets */,
+				FBE92438247E1998006A8CFC /* ActionViewController.swift */,
+				FBE9243A247E1998006A8CFC /* MainInterface.storyboard */,
+				FBE9243D247E1998006A8CFC /* Info.plist */,
+			);
+			path = "print-extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +235,7 @@
 			);
 			dependencies = (
 				8BE50B8D23E605F0006BBEB3 /* PBXTargetDependency */,
+				FBE9243F247E1998006A8CFC /* PBXTargetDependency */,
 			);
 			name = "print-ios";
 			productName = "ScottyLabs Print App";
@@ -221,7 +256,24 @@
 			);
 			name = "print-ios-extension";
 			productName = "print-ios-extension";
-			productReference = 8BE50B8223E605F0006BBEB3 /* print-ios-extension.appex */;
+			productReference = FBE9242F247E192F006A8CFC /* print-ios-extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FBE92433247E1998006A8CFC /* print-extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBE92443247E1998006A8CFC /* Build configuration list for PBXNativeTarget "print-extension" */;
+			buildPhases = (
+				FBE92430247E1998006A8CFC /* Sources */,
+				FBE92431247E1998006A8CFC /* Frameworks */,
+				FBE92432247E1998006A8CFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "print-extension";
+			productName = "print-extension";
+			productReference = FBE92434247E1998006A8CFC /* print-extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -230,13 +282,13 @@
 		29BCE88B1E1ADB26008451C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = ScottyLabs;
 				TargetAttributes = {
 					29BCE8921E1ADB26008451C5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7HRV96F7U7;
+						DevelopmentTeam = K72FJPB7L5;
 						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -247,6 +299,11 @@
 					};
 					8BE50B8123E605F0006BBEB3 = {
 						CreatedOnToolsVersion = 11.2.1;
+						DevelopmentTeam = K72FJPB7L5;
+						ProvisioningStyle = Automatic;
+					};
+					FBE92433247E1998006A8CFC = {
+						CreatedOnToolsVersion = 11.3.1;
 						DevelopmentTeam = K72FJPB7L5;
 						ProvisioningStyle = Automatic;
 					};
@@ -267,6 +324,7 @@
 			targets = (
 				29BCE8921E1ADB26008451C5 /* print-ios */,
 				8BE50B8123E605F0006BBEB3 /* print-ios-extension */,
+				FBE92433247E1998006A8CFC /* print-extension */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +346,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29BCE8BB1E1ADD6D008451C5 /* Main.storyboard in Resources */,
+				FBE92447247E1AC0006A8CFC /* Base.lproj in Resources */,
+				FBE92446247E1AC0006A8CFC /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE92432247E1998006A8CFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE92437247E1998006A8CFC /* Media.xcassets in Resources */,
+				FBE9243C247E1998006A8CFC /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +422,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBE92430247E1998006A8CFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE92439247E1998006A8CFC /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -361,6 +437,11 @@
 			isa = PBXTargetDependency;
 			target = 8BE50B8123E605F0006BBEB3 /* print-ios-extension */;
 			targetProxy = 8BE50B8C23E605F0006BBEB3 /* PBXContainerItemProxy */;
+		};
+		FBE9243F247E1998006A8CFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBE92433247E1998006A8CFC /* print-extension */;
+			targetProxy = FBE9243E247E1998006A8CFC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -379,6 +460,14 @@
 				8BE50B8923E605F0006BBEB3 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBE9243A247E1998006A8CFC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBE9243B247E1998006A8CFC /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -574,6 +663,51 @@
 			};
 			name = Release;
 		};
+		FBE92441247E1998006A8CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K72FJPB7L5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "print-extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.scottylabs.print-ios.print-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBE92442247E1998006A8CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K72FJPB7L5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "print-extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.scottylabs.print-ios.print-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -600,6 +734,15 @@
 			buildConfigurations = (
 				8BE50B9023E605F0006BBEB3 /* Debug */,
 				8BE50B9123E605F0006BBEB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBE92443247E1998006A8CFC /* Build configuration list for PBXNativeTarget "print-extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBE92441247E1998006A8CFC /* Debug */,
+				FBE92442247E1998006A8CFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

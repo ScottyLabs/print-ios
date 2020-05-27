@@ -55,7 +55,6 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     let idText=andrewIDTextField.text!
     andrewID=andrewIDTextField.text!
     andrewIDLabel.text = "Andrew ID: \(idText) "
-    print(andrewID)
     print(idText)
     
     //clear text fields
