@@ -145,8 +145,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
-                        <outlet property="andrewIDLabel" destination="xyf-lV-Fgk" id="rHc-eR-QcQ"/>
                         <outlet property="andrewIDTextField" destination="M9v-RV-rF4" id="SND-zS-IJO"/>
+                        <outlet property="fileNameTextField" destination="u1N-pX-xKd" id="LzW-6Q-8FE"/>
                         <outlet property="printOptionTextField" destination="eKq-uU-hPw" id="BoO-7h-cIO"/>
                         <outlet property="quantityLabel" destination="J3z-YB-hhY" id="Jac-1q-7cm"/>
                         <outlet property="stepper" destination="2Cp-WY-UIV" id="ZjI-fq-pdj"/>

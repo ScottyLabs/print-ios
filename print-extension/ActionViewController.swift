@@ -12,36 +12,119 @@ import MobileCoreServices
 import Alamofire
 
 
-struct persistData {
-    static var andrewID = ""
-}
-
 class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate { //,UIDocumentPickerDelegate,UINavigationControllerDelegate {
     
     // MARK: Variables
     var andrewID: String?
+    var fileName: String?
     
     
-    // MARK: Properties
+    // MARK: Outlets
     
+    // text fields
     @IBOutlet weak var andrewIDTextField: UITextField!
+    @IBOutlet weak var fileNameTextField: UITextField!
+    @IBOutlet weak var printOptionTextField: UITextField!
     
-    @IBOutlet weak var printOptionTextField: UITextField! //used
-    
-    @IBOutlet weak var andrewIDLabel: UILabel!
-    
-    // for stepper
+    // for num copies
     @IBOutlet weak var quantityLabel: UILabel!
-    
     @IBOutlet weak var stepper: UIStepper!
     
     
+    // MARK: Initialization
+    
+    // Called when view is loaded
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initializeTextFields()
+        initializeNumCopies()
+        
+    }
+    // initializes information for text fields
+    func initializeTextFields() {
+        // set text field delegates
+        andrewIDTextField.delegate = self
+        fileNameTextField.delegate = self
+        printOptionTextField.delegate = self
+        
+        // get andrew ID from UserDefaults
+        
+        // get file name from extension context
+        if let content = extensionContext!.inputItems.first as? NSExtensionItem {
+            if let contents = content.attachments {
+                for attachment in contents {
+                    fileName = attachment.suggestedName
+                }
+            }
+        }
+        fileNameTextField.text = fileName ?? ""
+        
+    }
+    // initializes information for num copies and stepper
+    func initializeNumCopies() {
+        //for stepper
+        stepper.wraps = false
+        stepper.autorepeat = true
+        stepper.maximumValue = 100
+    }
+    
+    
+    // MARK: UITextFieldDelegate
+    // I'm handling multiple text fields using switch statements... best way to do it
+    // according to multiple Stack Overflow posts...
+    
+    // Started editing text field
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch (textField) {
+        case printOptionTextField:
+            // This is to create the cool picker view for print options
+            createPickerView()
+        default:
+            return
+        }
+    }
+    // Clicked "Done" in keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard
+        textField.resignFirstResponder()
+        return true
+    }
+    // Finished editing text field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch (textField) {
+        case andrewIDTextField:
+            handleAndrewIDEndEditing(textField)
+        case fileNameTextField:
+            handleFileNameEndEditing()
+        case printOptionTextField:
+            handlePrintOptionEndEditing()
+        default:
+            return
+        }
+        
+    }
+    
+    // MARK: Text Field Handlers
+    
+    // Set the new andrew ID
+    func handleAndrewIDEndEditing(_ textField: UITextField) {
+        andrewID = textField.text
+    }
+    
+    func handleFileNameEndEditing() {
+        
+    }
+    
+    func handlePrintOptionEndEditing() {
+        
+    }
     
     // MARK: Buttons
     
-    @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        quantityLabel.text = Int(sender.value).description
-    }
+//    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+//        quantityLabel.text = Int(sender.value).description
+//    }
     
     
     
@@ -84,22 +167,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     
-    // MARK: UITextFieldDelegate
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        createPickerView()
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Hide the keyboard
-        textField.resignFirstResponder()
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // Set the new andrew ID if non-nil
-        //      if let newAndrewID = textField.text {
-        //          UserDefaults.standard.set(newAndrewID, forKey: andrewIDKey)
-        //      }
-    }
     
     
     
@@ -165,6 +233,10 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //var pdfURL: URL? { get };
         //let filePDF = init?(url: pdfURL);
         let identifier = kUTTypePDF as String
+        guard let safeAndrewID = andrewID else {
+            showAlert(info: "Andrew ID cannot be blank")
+            return
+        }
         
         if let content = extensionContext!.inputItems.first as? NSExtensionItem {
             if let contents = content.attachments {
@@ -173,7 +245,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     print("fileName:"+fileName)
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
                         let url = data as! NSURL
-                        self.alamofireUpload(andrewID: persistData.andrewID, fileName: fileName, fileURL: url as URL)
+                        self.alamofireUpload(andrewID: safeAndrewID, fileName: fileName, fileURL: url as URL)
                     }
                 }
             }
@@ -185,7 +257,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func alamofireUpload(andrewID: String, fileName: String, fileURL: URL) {
         let parameters = [
-            "andrew_id" : persistData.andrewID,
+            "andrew_id" : andrewID,
             "copies": "1",
             "sides": "one-sided"
         ]
@@ -251,20 +323,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //createPrintOptionPicker()
-        
-        //for stepper
-        stepper.wraps = false
-        stepper.autorepeat = true
-        stepper.maximumValue = 100
-        
-        // set text field delegates
-        printOptionTextField.delegate = self
-        
-        
-    }
+    
     
     
     
