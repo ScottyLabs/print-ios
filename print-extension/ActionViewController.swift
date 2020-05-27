@@ -17,7 +17,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     // MARK: Variables
     var andrewID: String?
     var fileName: String?
-    
+    var selectedOptionIndex = 0
     
     // MARK: Outlets
     
@@ -37,42 +37,17 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeTextFields()
+        initializeAndrewIDTextField()
+        initializeFileNameTextField()
+        initializePrintOptions()
         initializeNumCopies()
         
     }
-    // initializes information for text fields
-    func initializeTextFields() {
-        // set text field delegates
-        andrewIDTextField.delegate = self
-        fileNameTextField.delegate = self
-        printOptionTextField.delegate = self
-        
-        // get andrew ID from UserDefaults
-        
-        // get file name from extension context
-        if let content = extensionContext!.inputItems.first as? NSExtensionItem {
-            if let contents = content.attachments {
-                for attachment in contents {
-                    fileName = attachment.suggestedName
-                }
-            }
-        }
-        fileNameTextField.text = fileName ?? ""
-        
-    }
-    // initializes information for num copies and stepper
-    func initializeNumCopies() {
-        //for stepper
-        stepper.wraps = false
-        stepper.autorepeat = true
-        stepper.maximumValue = 100
-    }
-    
     
     // MARK: UITextFieldDelegate
     // I'm handling multiple text fields using switch statements... best way to do it
     // according to multiple Stack Overflow posts...
+    // This is where I'm handling all the text fields
     
     // Started editing text field
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -84,59 +59,83 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             return
         }
     }
+    
     // Clicked "Done" in keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard
         textField.resignFirstResponder()
         return true
     }
+    
     // Finished editing text field
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch (textField) {
         case andrewIDTextField:
             handleAndrewIDEndEditing(textField)
         case fileNameTextField:
-            handleFileNameEndEditing()
-        case printOptionTextField:
-            handlePrintOptionEndEditing()
+            handleFileNameEndEditing(textField)
         default:
             return
         }
         
     }
     
-    // MARK: Text Field Handlers
     
-    // Set the new andrew ID
+    // MARK: Andrew ID Text Field
+    
+    // initializes andrew id text field
+    func initializeAndrewIDTextField() {
+        // set text field delegates
+        andrewIDTextField.delegate = self
+        
+        // get andrew ID from UserDefaults
+        
+    }
+    
+    // called when andrew id text field is done editing
     func handleAndrewIDEndEditing(_ textField: UITextField) {
         andrewID = textField.text
+        print("Set Andrew ID to " + (andrewID ?? "nil"))
     }
     
-    func handleFileNameEndEditing() {
+    
+    // MARK: File Name Text Field
+    
+    // initializes file name text field
+    func initializeFileNameTextField() {
+        // set text field delegates
+        fileNameTextField.delegate = self
         
+        // get file name from extension context
+        if let content = extensionContext!.inputItems.first as? NSExtensionItem {
+            if let contents = content.attachments {
+                for attachment in contents {
+                    fileName = attachment.suggestedName
+                }
+            }
+        }
+        // simple nil check
+        fileNameTextField.text = fileName
     }
     
-    func handlePrintOptionEndEditing() {
-        
+    // called when file name text field is done editing
+    func handleFileNameEndEditing(_ textField: UITextField) {
+        fileName = textField.text
+        print("Set File Name to " + (fileName ?? "nil"))
     }
+    
+    
+    
+    
+    // MARK: Text Field Handlers
+    
+    
+    
     
     // MARK: Buttons
     
 //    @IBAction func stepperValueChanged(_ sender: UIStepper) {
 //        quantityLabel.text = Int(sender.value).description
-//    }
-    
-    
-    
-//
-//    @IBAction func onButtonClick(_ sender: Any) {
-//        let idText=andrewIDTextField.text!
-//        andrewID=andrewIDTextField.text!
-//        andrewIDLabel.text = "Andrew ID: \(idText) "
-//        print(idText)
-//
-//        //clear text fields
-//        andrewIDTextField.text=""
 //    }
     
     @IBAction func done() {
@@ -148,66 +147,49 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     
-    /*
-     //start
-     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-     guard let myURL = urls.first else {
-     return
-     }
-     print("import result : \(myURL)")
-     }
-     
-     
-     
-     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-     print("view was cancelled")
-     dismiss(animated: true, completion: nil)
-     } // end
-     */
     
+    // MARK: Print Option Picker
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // MARK: Option Picker
-    
-    // for picker
+    // to be viewed via picker UI
     let options = ["One-sided",
                    "Two-sided (portrait)",
                    "Two-sided (landscape)"]
+    // for the request to print API
+    let codedOptions = ["one-sided",
+                        "two-sided-long-edge",
+                        "two-sided-short-edge"]
     
-    var selectedOptionIndex = 0
+    // just to initialize the text field
+    func initializePrintOptions() {
+        // set delegate
+        printOptionTextField.delegate = self
+        
+    }
     
-    //    func createPrintOptionPicker(){
-    //      printOptionPicker.delegate=self
-    //      printOptionTextField.inputView=printOptionPicker
-    //    }
-    
+    // This creates a picker view upon selecting the print option text field
+    // reference https://medium.com/@raj.amsarajm93/create-dropdown-using-uipickerview-4471e5c7d898
     func createPickerView() {
+        // create new UIPickerView object and set inputView
         let pickerView = UIPickerView()
         pickerView.delegate = self
         printOptionTextField.inputView = pickerView
-        dismissPickerView()
-    }
-    func dismissPickerView() {
+        
+        // create "Done" button at top for dismissal
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action))
+        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.endPrintOptionsAction))
         toolBar.setItems([button], animated: true)
         toolBar.isUserInteractionEnabled = true
         printOptionTextField.inputAccessoryView = toolBar
     }
-    @objc func action() {
+    // goes with the above
+    @objc func endPrintOptionsAction() {
         view.endEditing(true)
     }
     
+    
     // MARK: UIPickerDelegate
+    // This is the delegate for the UI Picker that is created in createPickerView
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -225,6 +207,18 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let selectedOption = options[row]
         selectedOptionIndex = row
         printOptionTextField.text = selectedOption
+        print("Set Print Option to " + selectedOption)
+    }
+    
+    
+    // MARK: Num Copies
+    
+    // initializes information for num copies and stepper
+    func initializeNumCopies() {
+        //for stepper
+        stepper.wraps = false
+        stepper.autorepeat = true
+        stepper.maximumValue = 100
     }
     
     // MARK: Print
