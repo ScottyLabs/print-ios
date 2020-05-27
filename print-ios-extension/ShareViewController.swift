@@ -1,6 +1,6 @@
 import UIKit
 import Social
-import Alamofire
+import Alamofirej
 import SwiftyJSON
 import MobileCoreServices
 

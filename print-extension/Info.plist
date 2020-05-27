@@ -24,6 +24,8 @@
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
+			<key>NSExtensionServiceRoleType</key>
+			<string>NSExtensionServiceRoleTypeViewer</string>
 			<key>NSExtensionActivationRule</key>
 			<string>TRUEPREDICATE</string>
 			<key>NSExtensionServiceAllowsFinderPreviewItem</key>
