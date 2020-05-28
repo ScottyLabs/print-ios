@@ -2,6 +2,7 @@ import UIKit
 
 // Constants
 let andrewIDKey = "andrewID"
+let suiteName = "group.org.scottylabs.print-ios"
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -11,8 +12,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load Andrew ID from UserDefaults
-        andrewIDTextField.text = UserDefaults.standard.object(forKey: andrewIDKey) as? String
+        // Load Andrew ID from group UserDefaults
+        if let userDefaults = UserDefaults(suiteName: suiteName) {
+            andrewIDTextField.text = userDefaults.string(forKey: andrewIDKey)
+        } else {
+            print("Warning: group (group.org.scottylabs.print-ios) not set properly, andrew id will not be shared")
+        }
         
         // Make this controller the delegate for the text field
         andrewIDTextField.delegate = self
@@ -37,7 +42,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         // Set the new andrew ID if non-nil
         if let newAndrewID = textField.text {
-            UserDefaults.standard.set(newAndrewID, forKey: andrewIDKey)
+            // set andrew ID in group user defaults
+            if let userDefaults = UserDefaults(suiteName: suiteName) {
+                userDefaults.set(newAndrewID, forKey: andrewIDKey)
+            } else {
+                print("Warning: group (\(suiteName)) not set properly, andrew id will not be shared")
+            }
         }
     }
     

@@ -79,6 +79,7 @@
 		C18DDD35240243F7002EC511 /* print-ios.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "print-ios.entitlements"; sourceTree = "<group>"; };
 		C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_print_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF0DC0E77A6B46E973CF5B9 /* Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App-ScottyLabs/Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig"; sourceTree = "<group>"; };
+		FB1E16D5247F3ECE002C73FC /* print-extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "print-extension.entitlements"; sourceTree = "<group>"; };
 		FB85F2A924733D1400ED59A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "printers-labs-map.pdf"; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 		FBE92435247E1998006A8CFC /* print-extension */ = {
 			isa = PBXGroup;
 			children = (
+				FB1E16D5247F3ECE002C73FC /* print-extension.entitlements */,
 				FBE92436247E1998006A8CFC /* Media.xcassets */,
 				8BE50B8623E605F0006BBEB3 /* ActionViewController.swift */,
 				FBE92448247E1D48006A8CFC /* MainInterface.storyboard */,
@@ -289,7 +291,7 @@
 				TargetAttributes = {
 					29BCE8921E1ADB26008451C5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = K72FJPB7L5;
+						DevelopmentTeam = 79RKWTYNRS;
 						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -305,7 +307,7 @@
 					};
 					FBE92433247E1998006A8CFC = {
 						CreatedOnToolsVersion = 11.3.1;
-						DevelopmentTeam = K72FJPB7L5;
+						DevelopmentTeam = 79RKWTYNRS;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -600,7 +602,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "print-ios/print-ios.entitlements";
-				DEVELOPMENT_TEAM = K72FJPB7L5;
+				DEVELOPMENT_TEAM = 79RKWTYNRS;
 				INFOPLIST_FILE = "print-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.scottylabs.print-ios";
@@ -616,7 +618,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "print-ios/print-ios.entitlements";
-				DEVELOPMENT_TEAM = K72FJPB7L5;
+				DEVELOPMENT_TEAM = 79RKWTYNRS;
 				INFOPLIST_FILE = "print-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.scottylabs.print-ios";
@@ -678,8 +680,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "print-extension/print-extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K72FJPB7L5;
+				DEVELOPMENT_TEAM = 79RKWTYNRS;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "print-extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -702,8 +705,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "print-extension/print-extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K72FJPB7L5;
+				DEVELOPMENT_TEAM = 79RKWTYNRS;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "print-extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

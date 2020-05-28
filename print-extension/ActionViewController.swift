@@ -14,6 +14,10 @@ import Alamofire
 
 class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate { //,UIDocumentPickerDelegate,UINavigationControllerDelegate {
     
+    // MARK: Constants
+    let andrewIDKey = "andrewID"
+    let suiteName = "group.org.scottylabs.print-ios"
+    
     // MARK: Variables
     var andrewID: String?
     var fileName: String?
@@ -92,7 +96,12 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // set text field delegates
         andrewIDTextField.delegate = self
         
-        // get andrew ID from UserDefaults
+        // Load Andrew ID from group UserDefaults
+        if let userDefaults = UserDefaults(suiteName: suiteName) {
+            andrewIDTextField.text = userDefaults.string(forKey: andrewIDKey)
+        } else {
+            print("Warning: group (group.org.scottylabs.print-ios) not set properly, andrew id will not be shared")
+        }
         
     }
     
