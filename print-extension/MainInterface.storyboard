@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController title="Image" id="ObA-dk-sSI" customClass="ActionViewController" customModule="print_extension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-Dm-cuz">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="3HJ-uW-3hn">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="WYi-yp-eM6">
+                                            <connections>
+                                                <action selector="done" destination="ObA-dk-sSI" id="Qdu-qn-U6V"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrew ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-lV-Fgk">
+                                <rect key="frame" x="25" y="122" width="105" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="IXh-Zz-LvO"/>
+                                    <constraint firstAttribute="width" constant="105" id="psC-p6-RhV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="One-sided" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-uU-hPw">
+                                <rect key="frame" x="167" y="254" width="127" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="1UB-hw-MB7"/>
+                                    <constraint firstAttribute="height" constant="34" id="6Cg-8E-rfQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 copy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-YB-hhY" userLabel="Number Copies Label">
+                                <rect key="frame" x="25" y="319" width="105" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="G5M-so-yMY"/>
+                                    <constraint firstAttribute="height" constant="32" id="VHw-fO-ojI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Print Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JV-rH-Bm3">
+                                <rect key="frame" x="25" y="254" width="105" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="HMu-PW-aof"/>
+                                    <constraint firstAttribute="width" constant="105" id="WWh-nK-zcU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-RV-rF4">
+                                <rect key="frame" x="167" y="122" width="127" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="bOC-ri-vDk"/>
+                                    <constraint firstAttribute="height" constant="34" id="j3u-Ue-RYc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-WY-UIV" userLabel="Number Copies Stepper">
+                                <rect key="frame" x="183" y="319" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="0uR-dS-K9d"/>
+                                </connections>
+                            </stepper>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1N-pX-xKd">
+                                <rect key="frame" x="167" y="188" width="127" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="KHr-Hb-FXT"/>
+                                    <constraint firstAttribute="height" constant="34" id="RIV-iv-LAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-ha-1Ec">
+                                <rect key="frame" x="25" y="188" width="105" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="eGo-LE-Npu"/>
+                                    <constraint firstAttribute="width" constant="105" id="o27-vL-rHE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-qE-fIy">
+                                <rect key="frame" x="137" y="456" width="47" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GG6-Ro-VnD"/>
+                                    <constraint firstAttribute="width" constant="47" id="trd-ye-Y6n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Print"/>
+                                <connections>
+                                    <action selector="printClick:" destination="ObA-dk-sSI" eventType="touchDown" id="eDu-j9-BcY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6JV-rH-Bm3" firstAttribute="top" secondItem="A1v-ha-1Ec" secondAttribute="bottom" constant="32" id="15a-D5-erN"/>
+                            <constraint firstItem="A1v-ha-1Ec" firstAttribute="top" secondItem="xyf-lV-Fgk" secondAttribute="bottom" constant="32" id="2CA-JD-uvs"/>
+                            <constraint firstItem="M9v-RV-rF4" firstAttribute="leading" secondItem="xyf-lV-Fgk" secondAttribute="trailing" constant="37" id="6cR-cO-dOV"/>
+                            <constraint firstItem="2Cp-WY-UIV" firstAttribute="top" secondItem="eKq-uU-hPw" secondAttribute="bottom" constant="31" id="9CN-Bs-Wg2"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="VVe-Uw-JpX" secondAttribute="top" id="9q6-5A-HOw"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="u1N-pX-xKd" secondAttribute="trailing" constant="26" id="Daa-Fm-dUY"/>
+                            <constraint firstItem="M9v-RV-rF4" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="34" id="FYw-ww-KMh"/>
+                            <constraint firstItem="xyf-lV-Fgk" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="34" id="H4b-bV-W2g"/>
+                            <constraint firstItem="A1v-ha-1Ec" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="L1r-R6-4Vi"/>
+                            <constraint firstItem="J3z-YB-hhY" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="M06-ac-8L4"/>
+                            <constraint firstItem="u1N-pX-xKd" firstAttribute="leading" secondItem="A1v-ha-1Ec" secondAttribute="trailing" constant="37" id="MZ4-lU-BKO"/>
+                            <constraint firstItem="2Cp-WY-UIV" firstAttribute="leading" secondItem="J3z-YB-hhY" secondAttribute="trailing" constant="53" id="O32-lK-nRA"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="bottom" secondItem="SgA-qE-fIy" secondAttribute="bottom" constant="42" id="STP-hf-zQA"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="SgA-qE-fIy" secondAttribute="trailing" constant="136" id="SfF-LW-NIS"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="VVe-Uw-JpX" secondAttribute="top" id="SyM-yo-pPn"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="eKq-uU-hPw" secondAttribute="trailing" constant="26" id="VWL-3O-NsO"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="2Cp-WY-UIV" secondAttribute="trailing" constant="43" id="VXt-hl-tzr"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="M9v-RV-rF4" secondAttribute="trailing" constant="26" id="X9z-uK-7hd"/>
+                            <constraint firstItem="eKq-uU-hPw" firstAttribute="leading" secondItem="6JV-rH-Bm3" secondAttribute="trailing" constant="37" id="b5B-b0-eIO"/>
+                            <constraint firstItem="xyf-lV-Fgk" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="csT-Kb-CpP"/>
+                            <constraint firstItem="6JV-rH-Bm3" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="dUT-hm-R2e"/>
+                            <constraint firstItem="eKq-uU-hPw" firstAttribute="top" secondItem="u1N-pX-xKd" secondAttribute="bottom" constant="32" id="gqz-ob-fyd"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="trailing" secondItem="VVe-Uw-JpX" secondAttribute="trailing" id="igs-Gg-Xbj"/>
+                            <constraint firstItem="SgA-qE-fIy" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="137" id="kgr-7p-fpz"/>
+                            <constraint firstItem="u1N-pX-xKd" firstAttribute="top" secondItem="M9v-RV-rF4" secondAttribute="bottom" constant="32" id="kvK-hV-Uob"/>
+                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" id="rMc-If-rME"/>
+                            <constraint firstItem="J3z-YB-hhY" firstAttribute="top" secondItem="6JV-rH-Bm3" secondAttribute="bottom" constant="31" id="rnw-RK-WfR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VVe-Uw-JpX"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="andrewIDTextField" destination="M9v-RV-rF4" id="SND-zS-IJO"/>
+                        <outlet property="fileNameTextField" destination="u1N-pX-xKd" id="LzW-6Q-8FE"/>
+                        <outlet property="numCopiesLabel" destination="J3z-YB-hhY" id="DmO-xq-JTH"/>
+                        <outlet property="numCopiesStepper" destination="2Cp-WY-UIV" id="mD7-wQ-Xr3"/>
+                        <outlet property="printOptionTextField" destination="eKq-uU-hPw" id="BoO-7h-cIO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>

@@ -5,7 +5,7 @@ use_frameworks!
 target 'print-ios' do
   use_frameworks!
 
-  target 'print-ios-extension' do
+  target 'print-extension' do
     pod 'Alamofire', '~> 4.8'
     pod 'SwiftyJSON', '~> 4.0'
   end
