@@ -50,7 +50,6 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-    
     // MARK: UITextFieldDelegate
     // I'm handling multiple text fields using switch statements... best way to do it
     // according to multiple Stack Overflow posts...
@@ -99,9 +98,11 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Load Andrew ID from group UserDefaults
         if let userDefaults = UserDefaults(suiteName: suiteName) {
             andrewIDTextField.text = userDefaults.string(forKey: andrewIDKey)
+            andrewID = andrewIDTextField.text
         } else {
             print("Warning: group (group.org.scottylabs.print-ios) not set properly, andrew id will not be shared")
         }
+        print("Set Andrew ID to " + (andrewID ?? "nil"))
         
     }
     
@@ -124,12 +125,21 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let content = extensionContext!.inputItems.first as? NSExtensionItem {
             if let contents = content.attachments {
                 for attachment in contents {
-                    fileName = attachment.suggestedName
+                    // gets type identifier (pdf or txt)
+                    let identifier = attachment.registeredTypeIdentifiers.first!
+                    attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
+                        let url = data as! NSURL
+                        self.fileName = url.lastPathComponent
+                        print("Set File Name to " + (self.fileName ?? "nil"))
+                        // cool async thing that is needed to modify the view
+                        DispatchQueue.main.async {
+                            self.fileNameTextField.text = self.fileName
+                        }
+                    }
                 }
             }
         }
-        // simple nil check
-        fileNameTextField.text = fileName
+        
     }
     
     // called when file name text field is done editing
@@ -235,7 +245,6 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // Upon clicking print button
     @IBAction func printClick(_ sender: Any) {
-        let identifier = kUTTypePDF as String
         
         // nil check the andrew ID and file name
         guard let safeAndrewID = andrewID else {
@@ -250,6 +259,8 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let content = extensionContext!.inputItems.first as? NSExtensionItem {
             if let contents = content.attachments {
                 for attachment in contents {
+                    // gets type identifier (pdf or txt)
+                    let identifier = attachment.registeredTypeIdentifiers.first!
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
                         let url = data as! NSURL
                         self.alamofireUpload(_andrewID: safeAndrewID, _fileName: safeFileName, fileURL: url as URL)

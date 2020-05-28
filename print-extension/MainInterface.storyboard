@@ -73,12 +73,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-WY-UIV" userLabel="Number Copies Stepper">
-                                <rect key="frame" x="183" y="319" width="94" height="32"/>
-                                <connections>
-                                    <action selector="stepperValueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="0uR-dS-K9d"/>
-                                </connections>
-                            </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1N-pX-xKd">
                                 <rect key="frame" x="167" y="188" width="127" height="34"/>
                                 <constraints>
@@ -105,26 +99,39 @@
                                     <action selector="printClick:" destination="ObA-dk-sSI" eventType="touchUpInside" id="BVP-pB-ETs"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbm-y9-IY3">
+                                <rect key="frame" x="167" y="319" width="127" height="32"/>
+                                <subviews>
+                                    <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-WY-UIV" userLabel="Number Copies Stepper">
+                                        <rect key="frame" x="16.5" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="stepperValueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="0uR-dS-K9d"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="HZx-GJ-fGG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6JV-rH-Bm3" firstAttribute="top" secondItem="A1v-ha-1Ec" secondAttribute="bottom" constant="32" id="15a-D5-erN"/>
                             <constraint firstItem="A1v-ha-1Ec" firstAttribute="top" secondItem="xyf-lV-Fgk" secondAttribute="bottom" constant="32" id="2CA-JD-uvs"/>
                             <constraint firstItem="M9v-RV-rF4" firstAttribute="leading" secondItem="xyf-lV-Fgk" secondAttribute="trailing" constant="37" id="6cR-cO-dOV"/>
-                            <constraint firstItem="2Cp-WY-UIV" firstAttribute="top" secondItem="eKq-uU-hPw" secondAttribute="bottom" constant="31" id="9CN-Bs-Wg2"/>
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="VVe-Uw-JpX" secondAttribute="top" id="9q6-5A-HOw"/>
                             <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="u1N-pX-xKd" secondAttribute="trailing" constant="26" id="Daa-Fm-dUY"/>
+                            <constraint firstItem="bbm-y9-IY3" firstAttribute="leading" secondItem="J3z-YB-hhY" secondAttribute="trailing" constant="37" id="DsL-m7-5pD"/>
                             <constraint firstItem="M9v-RV-rF4" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="34" id="FYw-ww-KMh"/>
                             <constraint firstItem="xyf-lV-Fgk" firstAttribute="top" secondItem="NOA-Dm-cuz" secondAttribute="bottom" constant="34" id="H4b-bV-W2g"/>
                             <constraint firstItem="A1v-ha-1Ec" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="L1r-R6-4Vi"/>
                             <constraint firstItem="J3z-YB-hhY" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="M06-ac-8L4"/>
                             <constraint firstItem="u1N-pX-xKd" firstAttribute="leading" secondItem="A1v-ha-1Ec" secondAttribute="trailing" constant="37" id="MZ4-lU-BKO"/>
-                            <constraint firstItem="2Cp-WY-UIV" firstAttribute="leading" secondItem="J3z-YB-hhY" secondAttribute="trailing" constant="53" id="O32-lK-nRA"/>
                             <constraint firstItem="VVe-Uw-JpX" firstAttribute="bottom" secondItem="SgA-qE-fIy" secondAttribute="bottom" constant="42" id="STP-hf-zQA"/>
                             <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="SgA-qE-fIy" secondAttribute="trailing" constant="136" id="SfF-LW-NIS"/>
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="VVe-Uw-JpX" secondAttribute="top" id="SyM-yo-pPn"/>
+                            <constraint firstItem="bbm-y9-IY3" firstAttribute="top" secondItem="eKq-uU-hPw" secondAttribute="bottom" constant="31" id="UFi-za-Hkw"/>
                             <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="eKq-uU-hPw" secondAttribute="trailing" constant="26" id="VWL-3O-NsO"/>
-                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="2Cp-WY-UIV" secondAttribute="trailing" constant="43" id="VXt-hl-tzr"/>
                             <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="M9v-RV-rF4" secondAttribute="trailing" constant="26" id="X9z-uK-7hd"/>
                             <constraint firstItem="eKq-uU-hPw" firstAttribute="leading" secondItem="6JV-rH-Bm3" secondAttribute="trailing" constant="37" id="b5B-b0-eIO"/>
                             <constraint firstItem="xyf-lV-Fgk" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="25" id="csT-Kb-CpP"/>
@@ -133,6 +140,7 @@
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="trailing" secondItem="VVe-Uw-JpX" secondAttribute="trailing" id="igs-Gg-Xbj"/>
                             <constraint firstItem="SgA-qE-fIy" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" constant="137" id="kgr-7p-fpz"/>
                             <constraint firstItem="u1N-pX-xKd" firstAttribute="top" secondItem="M9v-RV-rF4" secondAttribute="bottom" constant="32" id="kvK-hV-Uob"/>
+                            <constraint firstItem="VVe-Uw-JpX" firstAttribute="trailing" secondItem="bbm-y9-IY3" secondAttribute="trailing" constant="26" id="nAi-ds-TRf"/>
                             <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="VVe-Uw-JpX" secondAttribute="leading" id="rMc-If-rME"/>
                             <constraint firstItem="J3z-YB-hhY" firstAttribute="top" secondItem="6JV-rH-Bm3" secondAttribute="bottom" constant="31" id="rnw-RK-WfR"/>
                         </constraints>
