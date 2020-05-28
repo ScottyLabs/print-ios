@@ -40,7 +40,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="One-sided" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-uU-hPw">
                                 <rect key="frame" x="167" y="254" width="127" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="1UB-hw-MB7"/>
                                     <constraint firstAttribute="height" constant="34" id="6Cg-8E-rfQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,7 +68,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-RV-rF4">
                                 <rect key="frame" x="167" y="122" width="127" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="bOC-ri-vDk"/>
                                     <constraint firstAttribute="height" constant="34" id="j3u-Ue-RYc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -84,7 +82,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1N-pX-xKd">
                                 <rect key="frame" x="167" y="188" width="127" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="KHr-Hb-FXT"/>
                                     <constraint firstAttribute="height" constant="34" id="RIV-iv-LAJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -101,11 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgA-qE-fIy">
-                                <rect key="frame" x="137" y="456" width="47" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GG6-Ro-VnD"/>
-                                    <constraint firstAttribute="width" constant="47" id="trd-ye-Y6n"/>
-                                </constraints>
+                                <rect key="frame" x="137" y="453" width="47" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Print"/>
                                 <connections>
