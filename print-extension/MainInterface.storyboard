@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Print"/>
                                 <connections>
-                                    <action selector="printClick:" destination="ObA-dk-sSI" eventType="touchDown" id="eDu-j9-BcY"/>
+                                    <action selector="printClick:" destination="ObA-dk-sSI" eventType="touchUpInside" id="BVP-pB-ETs"/>
                                 </connections>
                             </button>
                         </subviews>
