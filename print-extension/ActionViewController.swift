@@ -19,13 +19,12 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var fileName: String?
     var selectedOptionIndex = 0
     
-    // MARK: Outlets
     
+    // MARK: Outlets
     // text fields
     @IBOutlet weak var andrewIDTextField: UITextField!
     @IBOutlet weak var fileNameTextField: UITextField!
     @IBOutlet weak var printOptionTextField: UITextField!
-    
     // for num copies
     @IBOutlet weak var numCopiesLabel: UILabel!
     @IBOutlet weak var numCopiesStepper: UIStepper!
@@ -43,8 +42,9 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         initializeFileNameTextField()
         initializePrintOptions()
         initializeNumCopies()
-        
     }
+    
+    
     
     // MARK: UITextFieldDelegate
     // I'm handling multiple text fields using switch statements... best way to do it
@@ -83,6 +83,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
+    
     // MARK: Andrew ID Text Field
     
     // initializes andrew id text field
@@ -99,6 +100,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         andrewID = textField.text
         print("Set Andrew ID to " + (andrewID ?? "nil"))
     }
+    
     
     
     // MARK: File Name Text Field
@@ -125,28 +127,16 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         fileName = textField.text
         print("Set File Name to " + (fileName ?? "nil"))
     }
-    
-    
-    
-    
-    // MARK: Buttons
-    
 
-    
-    @IBAction func done() {
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
-    }
     
     
     // MARK: Print Option Picker
     
     // to be viewed via picker UI
+    // this corresponds to printAPIOptions defined below
     let options = ["One-sided",
                    "Two-sided (portrait)",
                    "Two-sided (landscape)"]
-    
     
     // just to initialize the text field
     func initializePrintOptions() {
@@ -177,6 +167,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
+    
     // MARK: UIPickerDelegate
     // This is the delegate for the UI Picker that is created in createPickerView
     
@@ -198,6 +189,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         printOptionTextField.text = selectedOption
         print("Set Print Option to " + selectedOption)
     }
+    
     
     
     // MARK: Num Copies
@@ -222,45 +214,50 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
+    
     // MARK: Print
     
     // for the request to print API
-    let codedOptions = ["one-sided",
-                        "two-sided-long-edge",
-                        "two-sided-short-edge"]
+    // this corresponds to options array defined above
+    let printAPIOptions = ["one-sided",
+                           "two-sided-long-edge",
+                           "two-sided-short-edge"]
     
+    // Upon clicking print button
     @IBAction func printClick(_ sender: Any) {
-        //var pdfURL: URL? { get };
-        //let filePDF = init?(url: pdfURL);
         let identifier = kUTTypePDF as String
+        
+        // nil check the andrew ID and file name
         guard let safeAndrewID = andrewID else {
             showAlert(info: "Andrew ID cannot be blank")
+            return
+        }
+        guard let safeFileName = fileName else {
+            showAlert(info: "File Name cannot be blank")
             return
         }
         
         if let content = extensionContext!.inputItems.first as? NSExtensionItem {
             if let contents = content.attachments {
                 for attachment in contents {
-                    let fileName = attachment.suggestedName ?? "file"
-                    print("fileName:"+fileName)
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
                         let url = data as! NSURL
-                        self.alamofireUpload(andrewID: safeAndrewID, fileName: fileName, fileURL: url as URL)
+                        self.alamofireUpload(andrewID: safeAndrewID, fileName: safeFileName, fileURL: url as URL)
                     }
                 }
             }
         }
-        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
-        
-        
+        // Note: The extension is not terminated here. Instead, the extension is terminated in the callback to alamoFireUpload
     }
     
+    // uploads via AlamoFire
     func alamofireUpload(andrewID: String, fileName: String, fileURL: URL) {
         let parameters = [
             "andrew_id" : andrewID,
             "copies": "1",
             "sides": "one-sided"
         ]
+        print("Sending request with andrewID:\(andrewID), fileName:\(fileName)")
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             
@@ -281,10 +278,8 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             }
             
         }, to: "https://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
-            
             switch result {
             case .success(let upload, _, _):
-                
                 upload.responseJSON { response in
                     if let JSON = response.result.value {
                         if let status = response.response?.statusCode {
@@ -295,8 +290,12 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                             default:
                                 if let message = dict["message"] {
                                     if let statusCode = dict["status_code"] {
-                                        self.showAlert(info: (message as! String) + "\n Status code: \(statusCode)")
-                                        print("success")
+                                        self.showAlertWithHandler(info: (message as! String) + "\n Status code: \(statusCode)",
+                                            handler: { (action: UIAlertAction!) in
+                                                self.endExtensionView()
+                                        })
+                                        print("print API success")
+                                        
                                     }
                                 }
                             }
@@ -305,14 +304,27 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 }
                 
             case .failure(let encodingError):
-                self.showAlert(info: (encodingError) as! String + "\n Encoding failed!")
-                print("failure")
+                self.showAlertWithHandler(info: (encodingError) as! String + "\n Encoding failed!", handler: { (action: UIAlertAction!) in self.endExtensionView()})
+                print("print API failure")
             }
             
         })
     }
     
-    func showAlert(info:String) {
+    
+    // MARK: Done button
+    
+    // Upon clicking the done button at the top
+    @IBAction func done() {
+        endExtensionView()
+    }
+    
+    
+    
+    // MARK: Utilities
+    
+    // shows a little alert
+    func showAlert(info: String) {
         let message = info
         let pushPrompt = UIAlertController(title: "Print PDF", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in })
@@ -320,40 +332,24 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         present(pushPrompt, animated: true, completion: nil )
     }
     
-
+    // shows alert, calls handler
+    // handler is a lambda function to be called after clicking "OK"
+    func showAlertWithHandler(info: String, handler: ((UIAlertAction) -> Void)?) {
+        let message = info
+        let pushPrompt = UIAlertController(title: "Print PDF", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: handler)
+        pushPrompt.addAction(ok)
+        present(pushPrompt, animated: true, completion: nil )
+    }
     
-    
-    
-    
+    // used to terminate extension view
+    func endExtensionView() {
+        // Return any edited content to the host app.
+        // This template doesn't do anything, so we just echo the passed in items.
+        // Basically it doesn't modify the page, unlike other action extensions
+        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+    }
     
     
 }
 
-/*
- 
- // test code
- class MyViewController: UIViewController {
- 
- override func viewDidLoad() {
- super.viewDidLoad()
- }
- 
- func importFromFiles(origin: UIViewController?) {
- 
- let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeContent as String], in: .import)
- documentPicker.delegate = self
- documentPicker.allowsMultipleSelection = true
- 
- origin?.present(documentPicker, animated: true, completion: nil)
- 
- }
- 
- }
- extension MyViewController: UIDocumentPickerDelegate {
- 
- func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
- print("Files picked")
- }
- 
- }
- */
