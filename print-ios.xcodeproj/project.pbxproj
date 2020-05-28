@@ -11,8 +11,8 @@
 		29BCE89E1E1ADB26008451C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE89D1E1ADB26008451C5 /* Assets.xcassets */; };
 		29BCE8A11E1ADB26008451C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE89F1E1ADB26008451C5 /* LaunchScreen.storyboard */; };
 		29BCE8AB1E1ADBB9008451C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */; };
-		33AB92C6728830FC0032815A /* Pods_print_ios_print_extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384F05BD9D3AE1B3C7197F3D /* Pods_print_ios_print_extension.framework */; };
-		390C32B1E515EADCDD3C7141 /* Pods_print_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */; };
+		3E39CC548A2F6566FA03DF72 /* libPods-print-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967CC7D879C9DE0FBBE7112F /* libPods-print-ios.a */; };
+		A6D6FE51067CD438385F62C0 /* libPods-print-ios-print-extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339688A8BE479026D8452E69 /* libPods-print-ios-print-extension.a */; };
 		C18DDD3424024287002EC511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DDD3324024287002EC511 /* ViewController.swift */; };
 		FB85F2AE2474AC0600ED59A3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */; };
 		FB85F2B42474AF1400ED59A3 /* printers-labs-map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */; };
@@ -55,16 +55,16 @@
 		29BCE8A01E1ADB26008451C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29BCE8A21E1ADB26008451C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BCE8AA1E1ADBB9008451C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		384F05BD9D3AE1B3C7197F3D /* Pods_print_ios_print_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_print_ios_print_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		339688A8BE479026D8452E69 /* libPods-print-ios-print-extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-print-ios-print-extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BB787FB94F188DBFA90F17 /* Pods-print-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios/Pods-print-ios.release.xcconfig"; sourceTree = "<group>"; };
 		6A0C3BC38402A95F6653ABAD /* Pods-ScottyLabs Print App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App/Pods-ScottyLabs Print App.release.xcconfig"; sourceTree = "<group>"; };
 		6FF9337F32C2938227FEFAC7 /* Pods-print-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios/Pods-print-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		81096B0AD068033A1DC03E62 /* Pods-ScottyLabs Print App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App/Pods-ScottyLabs Print App.debug.xcconfig"; sourceTree = "<group>"; };
 		8BE50B8623E605F0006BBEB3 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		967CC7D879C9DE0FBBE7112F /* libPods-print-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-print-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3C65036AB9126A23C88FB8 /* Pods-print-ios-print-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-print-ios-print-extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-print-ios-print-extension/Pods-print-ios-print-extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C18DDD3324024287002EC511 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C18DDD35240243F7002EC511 /* print-ios.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "print-ios.entitlements"; sourceTree = "<group>"; };
-		C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_print_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF0DC0E77A6B46E973CF5B9 /* Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScottyLabs Print App-ScottyLabs/Pods-ScottyLabs Print App-ScottyLabs.debug.xcconfig"; sourceTree = "<group>"; };
 		FB1E16D5247F3ECE002C73FC /* print-extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "print-extension.entitlements"; sourceTree = "<group>"; };
 		FB85F2A924733D1400ED59A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				390C32B1E515EADCDD3C7141 /* Pods_print_ios.framework in Frameworks */,
+				3E39CC548A2F6566FA03DF72 /* libPods-print-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33AB92C6728830FC0032815A /* Pods_print_ios_print_extension.framework in Frameworks */,
+				A6D6FE51067CD438385F62C0 /* libPods-print-ios-print-extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +115,8 @@
 		04661564A9685FE3E52D4C58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */,
-				384F05BD9D3AE1B3C7197F3D /* Pods_print_ios_print_extension.framework */,
+				967CC7D879C9DE0FBBE7112F /* libPods-print-ios.a */,
+				339688A8BE479026D8452E69 /* libPods-print-ios-print-extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,7 +193,6 @@
 				29BCE8901E1ADB26008451C5 /* Frameworks */,
 				29BCE8911E1ADB26008451C5 /* Resources */,
 				29BCE8C31E1ADD6D008451C5 /* Embed App Extensions */,
-				62B144CE9952C92FF53424D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,26 +293,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62B144CE9952C92FF53424D2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-print-ios/Pods-print-ios-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-print-ios/Pods-print-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		881015B7343BFB039A0C5DE2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
