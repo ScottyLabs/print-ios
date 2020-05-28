@@ -18,6 +18,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var andrewID: String?
     var fileName: String?
     var selectedOptionIndex = 0
+    var numCopies = 1
     
     
     // MARK: Outlets
@@ -205,7 +206,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // sets new text of num copies upon stepper value change
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        let numCopies = Int(sender.value)
+        numCopies = Int(sender.value)
         var copiesText = "copies"
         if (numCopies == 1) {
             copiesText = "copy"
@@ -242,7 +243,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 for attachment in contents {
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
                         let url = data as! NSURL
-                        self.alamofireUpload(andrewID: safeAndrewID, fileName: safeFileName, fileURL: url as URL)
+                        self.alamofireUpload(_andrewID: safeAndrewID, _fileName: safeFileName, fileURL: url as URL)
                     }
                 }
             }
@@ -251,13 +252,13 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     // uploads via AlamoFire
-    func alamofireUpload(andrewID: String, fileName: String, fileURL: URL) {
-        let parameters = [
-            "andrew_id" : andrewID,
-            "copies": "1",
-            "sides": "one-sided"
+    func alamofireUpload(_andrewID: String, _fileName: String, fileURL: URL) {
+        let parameters: [String:String] = [
+            "andrew_id" : _andrewID,
+            "copies": String(numCopies),
+            "sides": printAPIOptions[selectedOptionIndex]
         ]
-        print("Sending request with andrewID:\(andrewID), fileName:\(fileName)")
+        print("Sending request with andrewID:\(parameters["andrew_id"] ?? "nil"), fileName:\(_fileName), copies:\(parameters["copies"] ?? "nil"), sides:\(parameters["sides"] ?? "nil")")
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             
@@ -274,7 +275,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 let data : Data = Data(bytes)
                 
                 // withName has to be file, I think, for the POST API to receive it
-                multipartFormData.append(data, withName: "file", fileName: fileName, mimeType: "application/pdf")
+                multipartFormData.append(data, withName: "file", fileName: _fileName, mimeType: "application/pdf")
             }
             
         }, to: "https://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
