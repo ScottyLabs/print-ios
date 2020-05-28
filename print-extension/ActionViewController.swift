@@ -12,7 +12,7 @@ import MobileCoreServices
 import Alamofire
 
 
-class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate { //,UIDocumentPickerDelegate,UINavigationControllerDelegate {
+class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     // MARK: Constants
     let andrewIDKey = "andrewID"

@@ -14,7 +14,6 @@
 		33AB92C6728830FC0032815A /* Pods_print_ios_print_extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384F05BD9D3AE1B3C7197F3D /* Pods_print_ios_print_extension.framework */; };
 		390C32B1E515EADCDD3C7141 /* Pods_print_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74635616FA1E80577EDD2F0 /* Pods_print_ios.framework */; };
 		C18DDD3424024287002EC511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DDD3324024287002EC511 /* ViewController.swift */; };
-		FB85F2AA24733D1400ED59A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2A924733D1400ED59A3 /* .gitignore */; };
 		FB85F2AE2474AC0600ED59A3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85F2AD2474AC0600ED59A3 /* MapViewController.swift */; };
 		FB85F2B42474AF1400ED59A3 /* printers-labs-map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FB85F2B22474AF1400ED59A3 /* printers-labs-map.pdf */; };
 		FBE92437247E1998006A8CFC /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE92436247E1998006A8CFC /* Media.xcassets */; };
@@ -337,7 +336,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB85F2AA24733D1400ED59A3 /* .gitignore in Resources */,
 				29BCE8AB1E1ADBB9008451C5 /* Main.storyboard in Resources */,
 				29BCE8A11E1ADB26008451C5 /* LaunchScreen.storyboard in Resources */,
 				FB85F2B42474AF1400ED59A3 /* printers-labs-map.pdf in Resources */,
@@ -676,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D3C65036AB9126A23C88FB8 /* Pods-print-ios-print-extension.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -701,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 132A7BFAF82F4F97DD56C3C3 /* Pods-print-ios-print-extension.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
