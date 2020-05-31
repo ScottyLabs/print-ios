@@ -17,6 +17,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     // MARK: Constants
     let andrewIDKey = "andrewID"
     let suiteName = "group.org.scottylabs.print-ios"
+    let alertTitle = "CMU Print"
     
     // MARK: Variables
     var andrewID: String?
@@ -129,8 +130,8 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     // gets type identifier (pdf or txt)
                     let identifier = attachment.registeredTypeIdentifiers.first!
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
-                        let url = data as! NSURL
-                        self.fileName = url.lastPathComponent
+                        let url = data as! URL
+                        self.fileName = url.deletingPathExtension().lastPathComponent
                         print("Set File Name to " + (self.fileName ?? "nil"))
                         // cool async thing that is needed to modify the view
                         DispatchQueue.main.async {
@@ -262,9 +263,10 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 for attachment in contents {
                     // gets type identifier (pdf or txt)
                     let identifier = attachment.registeredTypeIdentifiers.first!
+                    
                     attachment.loadItem(forTypeIdentifier: identifier, options: nil) { data, error in
-                        let url = data as! NSURL
-                        self.alamofireUpload(_andrewID: safeAndrewID, _fileName: safeFileName, fileURL: url as URL)
+                        let url = data as! URL
+                        self.alamofireUpload(safeAndrewID: safeAndrewID, safeFileName: safeFileName, fileURL: url as URL)
                     }
                 }
             }
@@ -273,13 +275,17 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     // uploads via AlamoFire
-    func alamofireUpload(_andrewID: String, _fileName: String, fileURL: URL) {
+    // safeAndrewID is andrew ID as a String (must be non-nil)
+    // safeFileName is the new file name as a String (doesn't include extension), to be
+    // sent to print API (must be non-nil)
+    // fileURL is the local URL that points to the file
+    func alamofireUpload(safeAndrewID: String, safeFileName: String, fileURL: URL) {
         let parameters: [String:String] = [
-            "andrew_id" : _andrewID,
+            "andrew_id" : safeAndrewID,
             "copies": String(numCopies),
             "sides": printAPIOptions[selectedOptionIndex]
         ]
-        print("Sending request with andrewID:\(parameters["andrew_id"] ?? "nil"), fileName:\(_fileName), copies:\(parameters["copies"] ?? "nil"), sides:\(parameters["sides"] ?? "nil")")
+        
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             
@@ -295,8 +301,25 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 bytes = buffer
                 let data : Data = Data(bytes)
                 
-                // withName has to be file, I think, for the POST API to receive it
-                multipartFormData.append(data, withName: "file", fileName: _fileName, mimeType: "application/pdf")
+                // add the correct file extension (checked by print API)
+                let pathExtension = fileURL.pathExtension
+                let fullFileName = safeFileName + "." + pathExtension
+                let mimeType: String
+                // The supported file types can be found in the Info.plist
+                switch (pathExtension) {
+                case "pdf":
+                    mimeType = "application/pdf"
+                case "txt":
+                    mimeType = "text/plain"
+                default:
+                    self.showAlert(info: "File type not supported: \(pathExtension)")
+                    return
+                }
+                
+                print("Sending request with andrewID:\(parameters["andrew_id"] ?? "nil"), fileName:\(fullFileName), copies:\(parameters["copies"] ?? "nil"), sides:\(parameters["sides"] ?? "nil")")
+
+                // withName has to be "file" (file is the param key) for the POST API to receive it
+                multipartFormData.append(data, withName: "file", fileName: fullFileName, mimeType: mimeType)
             }
             
         }, to: "https://apis.scottylabs.org/print/v0/printfile", encodingCompletion: { result in
@@ -348,7 +371,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     // shows a little alert
     func showAlert(info: String) {
         let message = info
-        let pushPrompt = UIAlertController(title: "Print PDF", message: message, preferredStyle: .alert)
+        let pushPrompt = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in })
         pushPrompt.addAction(ok)
         present(pushPrompt, animated: true, completion: nil )
@@ -358,7 +381,7 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     // handler is a lambda function to be called after clicking "OK"
     func showAlertWithHandler(info: String, handler: ((UIAlertAction) -> Void)?) {
         let message = info
-        let pushPrompt = UIAlertController(title: "Print PDF", message: message, preferredStyle: .alert)
+        let pushPrompt = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: handler)
         pushPrompt.addAction(ok)
         present(pushPrompt, animated: true, completion: nil )
