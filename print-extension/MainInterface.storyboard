@@ -19,9 +19,9 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="3HJ-uW-3hn">
-                                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="WYi-yp-eM6">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="WYi-yp-eM6">
                                             <connections>
-                                                <action selector="done" destination="ObA-dk-sSI" id="Qdu-qn-U6V"/>
+                                                <action selector="cancel:" destination="ObA-dk-sSI" id="3NC-Su-Sqm"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Print" style="done" id="Qym-Az-Aa2">
@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="height" constant="34" id="j3u-Ue-RYc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1N-pX-xKd">
                                 <rect key="frame" x="167" y="188" width="127" height="34"/>
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="34" id="RIV-iv-LAJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-ha-1Ec">
                                 <rect key="frame" x="25" y="188" width="105" height="34"/>

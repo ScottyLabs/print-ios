@@ -357,13 +357,12 @@ class ActionViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-    // MARK: Done button
     
-    // Upon clicking the done button at the top
-    @IBAction func done() {
+    // MARK: Cancel
+    // Upon clicking the cancel button at the top
+    @IBAction func cancel(_ sender: Any) {
         endExtensionView()
     }
-    
     
     
     // MARK: Utilities
