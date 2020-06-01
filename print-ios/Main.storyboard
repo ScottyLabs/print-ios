@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qbt-Z2-bhW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qbt-Z2-bhW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,61 +51,17 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hWe-jk-kfW">
-                                <rect key="frame" x="20" y="592" width="374" height="220"/>
+                                <rect key="frame" x="20" y="772" width="374" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGm-oc-BYV">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="oJc-ce-nJP"/>
-                                        </constraints>
-                                        <state key="normal" title="Instructions">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="FLg-q5-F29" kind="show" id="77j-bJ-75n"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxS-fI-qTn">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="40"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Printer Map">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="ncm-dX-Ln1" kind="show" id="feO-ho-Qdp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-Za-O5C">
-                                        <rect key="frame" x="0.0" y="120" width="374" height="40"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Feedback">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="feedbackClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="Gn0-Kf-MyA"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0t-6e-5UH">
-                                        <rect key="frame" x="0.0" y="180" width="374" height="40"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="About">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <color key="backgroundColor" red="0.12413515899999999" green="0.15971088410000001" blue="0.21786078810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bQh-EJ-qRt"/>
+                                            <constraint firstAttribute="width" constant="374" id="qAm-J8-6Qa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="&lt; About &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -118,12 +74,69 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="bxS-fI-qTn" firstAttribute="height" secondItem="EGm-oc-BYV" secondAttribute="height" id="682-BG-Ox8"/>
-                                    <constraint firstItem="oIo-Za-O5C" firstAttribute="height" secondItem="EGm-oc-BYV" secondAttribute="height" id="fDx-0R-TSE"/>
-                                    <constraint firstItem="L0t-6e-5UH" firstAttribute="height" secondItem="EGm-oc-BYV" secondAttribute="height" id="ksS-TP-mFp"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGm-oc-BYV">
+                                <rect key="frame" x="20" y="558" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.12413515899999999" green="0.15971088410000001" blue="0.21786078810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="TYf-VP-ppk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="nwA-KL-0fx"/>
+                                    <constraint firstAttribute="height" constant="40" id="oJc-ce-nJP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="&lt; Instructions &gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="FLg-q5-F29" kind="show" id="77j-bJ-75n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxS-fI-qTn">
+                                <rect key="frame" x="20" y="632" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.12413515899999999" green="0.15971088410000001" blue="0.21786078810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="76f-fl-E0m"/>
+                                    <constraint firstAttribute="width" constant="374" id="gV2-XZ-4u5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="&lt; Printer Map &gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="ncm-dX-Ln1" kind="show" id="feO-ho-Qdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-Za-O5C">
+                                <rect key="frame" x="20" y="705" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.12413515899999999" green="0.15971088410000001" blue="0.21786078810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AWR-IO-jXw"/>
+                                    <constraint firstAttribute="width" constant="374" id="IQw-Ch-BOq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title=" &lt; Feedback &gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="feedbackClick:" destination="u0G-Ij-yob" eventType="touchUpInside" id="Gn0-Kf-MyA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12415651229999999" green="0.15981069210000001" blue="0.21382343770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -131,6 +144,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vZe-rP-iEv" secondAttribute="trailing" id="3Pu-g4-Sjp"/>
                             <constraint firstItem="hWe-jk-kfW" firstAttribute="trailing" secondItem="SEY-h8-v5H" secondAttribute="trailingMargin" id="5Tj-42-feL"/>
                             <constraint firstItem="TQd-zN-nUj" firstAttribute="centerY" secondItem="SEY-h8-v5H" secondAttribute="centerY" constant="-100" id="C9Q-Z5-Kkg"/>
+                            <constraint firstItem="L0t-6e-5UH" firstAttribute="height" secondItem="EGm-oc-BYV" secondAttribute="height" id="Emj-db-hUh"/>
                             <constraint firstItem="56i-Pq-K5D" firstAttribute="top" secondItem="hWe-jk-kfW" secondAttribute="bottom" constant="50" id="Yjh-UJ-fK9"/>
                             <constraint firstItem="hWe-jk-kfW" firstAttribute="leading" secondItem="SEY-h8-v5H" secondAttribute="leadingMargin" id="feF-o4-eoO"/>
                             <constraint firstItem="vZe-rP-iEv" firstAttribute="leading" secondItem="SEY-h8-v5H" secondAttribute="leadingMargin" id="huc-1P-g2X"/>
@@ -160,15 +174,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-sR-Pdd">
-                                <rect key="frame" x="20" y="73" width="374" height="210"/>
-                                <string key="text">(Arvin is making it an action extension instead of a share extension, important distinction). Anyways, basically click the share button and scroll down until you see "CMU Print". Fill out form and click it.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1. Find file to print " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-sR-Pdd">
+                                <rect key="frame" x="20" y="102" width="374" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GSk-ch-9Va"/>
+                                    <constraint firstAttribute="width" constant="374" id="pL5-MN-56A"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgm-KS-CPZ">
+                                <rect key="frame" x="162" y="51" width="107" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="AaY-cB-PkA"/>
+                                    <constraint firstAttribute="width" constant="107" id="rAn-j4-ifg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2. Find the CMU Print Extension and select desired settings. " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFm-WB-gYH">
+                                <rect key="frame" x="20" y="175" width="374" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="462" id="XNM-ad-aya"/>
+                                    <constraint firstAttribute="height" constant="55" id="ipg-Cz-RhN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.12413515899999999" green="0.15971088410000001" blue="0.21786078810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tMG-sR-Pdd" firstAttribute="top" secondItem="1Bc-jF-pIZ" secondAttribute="bottom" constant="73" id="6bh-0r-l9j"/>
                             <constraint firstItem="HcF-Ha-BZX" firstAttribute="top" secondItem="tMG-sR-Pdd" secondAttribute="bottom" constant="491" id="Q28-aY-SDp"/>
