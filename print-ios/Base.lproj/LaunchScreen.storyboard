@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="I39-7x-amd">
-                                <rect key="frame" x="0.0" y="185.66666666666663" width="414" height="325"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" image="shareable-brand" translatesAutoresizingMaskIntoConstraints="NO" id="I39-7x-amd">
+                                <rect key="frame" x="0.0" y="125.66666666666669" width="414" height="325"/>
                                 <color key="backgroundColor" red="0.12415651229999999" green="0.15981069210000001" blue="0.21382343770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I39-7x-amd" secondAttribute="height" multiplier="414:325" id="pmC-62-JTj"/>
@@ -30,7 +30,7 @@
                         <color key="backgroundColor" red="0.12415651229999999" green="0.15981069210000001" blue="0.21382343770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="I39-7x-amd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="65P-oG-TjY"/>
-                            <constraint firstItem="I39-7x-amd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="Deo-yZ-F7A"/>
+                            <constraint firstItem="I39-7x-amd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-160" id="Deo-yZ-F7A"/>
                             <constraint firstAttribute="trailing" secondItem="I39-7x-amd" secondAttribute="trailing" id="GMV-qj-4UQ"/>
                         </constraints>
                     </view>
